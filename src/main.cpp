@@ -33,7 +33,6 @@ void test_date(){
 }
 
 int main() {
-	test_date();
 
 	ConsoleBankingApp app;
 

@@ -23,7 +23,7 @@ public:
 
 	Bank() {
 		number_of_accounts = 0;
-		accounts = new Account[MAXIMUM_OF_ACCOUNTS];
+		accounts = new Account*[MAXIMUM_OF_ACCOUNTS];
 	}
 
 	void add_account(Account &account);
@@ -40,7 +40,7 @@ public:
 
 private:
 
-	Account* accounts;
+	Account** accounts;
 	int number_of_accounts;
 
 	const string ERROR_NO_ACCOUNT_FOUND = "ERROR: No account found";

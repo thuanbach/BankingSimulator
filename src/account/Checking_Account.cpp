@@ -40,6 +40,6 @@ void Checking_Account::add_interest(const Date& date){
 
 	double amount = calculate_interest_amount(get_customer()->get_checking_interest(), date);
 
-	process_transaction(INTREST, amount, date);
+	process_transaction(INTEREST, amount, date);
 
 }

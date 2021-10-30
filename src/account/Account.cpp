@@ -67,7 +67,7 @@ void Account::process_transaction(int transaction_type, double amount,
 	case DEPOSITE:
 		new_balance = balance + amount;
 		break;
-	case INTREST:
+	case INTEREST:
 		new_balance = balance + amount;
 		break;
 	case CHKCHG:
@@ -80,7 +80,7 @@ void Account::process_transaction(int transaction_type, double amount,
 		return;
 	}
 
-	Transaction transaction(WITHDRAW, amount, new_balance, date);
+	Transaction transaction(transaction_type, amount, new_balance, date);
 
 	balance = new_balance;
 
@@ -100,7 +100,7 @@ string Account::to_string() const {
 	result << "Balance: " << CURRENCY_CHARACTER << balance << endl;
 
 	for (int i = 0; i < number_of_transactions; i++) {
-		//transactions[i].to_string();
+		result << transactions[i].to_string() << endl;
 	}
 
 	return result.str();
@@ -130,7 +130,7 @@ int Account::calculate_days_from_last_transaction(const Date &date) const {
 
 	Date latest_transaction_date = latest_transaction.get_transaction_date();
 
-	int difference_in_days = latest_transaction_date - date;
+	int difference_in_days = -(latest_transaction_date - date);
 
 	return difference_in_days;
 }

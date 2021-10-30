@@ -11,7 +11,7 @@
 
 const int	DEPOSITE = 1;
 const int 	WITHDRAW = 2;
-const int	INTREST = 3;
+const int	INTEREST = 3;
 const int	CHKCHG = 4;
 const int	OVERDRAFT = 5;
 

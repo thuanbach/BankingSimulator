@@ -24,7 +24,7 @@ class Checking_Account: public Account {
 
 		virtual void withdraw(const double amount, const Date &date);
 
-		void add_interest(const Date &date);
+		virtual void add_interest(const Date &date);
 
 	private:
 };

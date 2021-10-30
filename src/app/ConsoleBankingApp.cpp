@@ -33,6 +33,16 @@ void ConsoleBankingApp::initData() {
 	account->set_customer(*customer);
 	bank.add_account(*account);
 
+	Date depositeDate(11,10, 2018);
+
+	bank.make_deposit(0, 500, depositeDate);
+
+	Date withdrawDate(10,10, 2020);
+
+	bank.make_withdrawal(0, 100, withdrawDate);
+
+
+	cout << bank.get_account(0)->to_string();
 }
 
 string ConsoleBankingApp::get_user_input_as_string(){
@@ -190,6 +200,8 @@ void ConsoleBankingApp::start_deposit() {
 
 	cout << ENTER_DATE;
 	Date date = get_user_input_as_date();
+
+	Date testDate(1, 1, 2020);
 
 	bank.make_deposit(account_number, amount, date);
 

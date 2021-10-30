@@ -25,8 +25,8 @@ Account* Bank::get_account(int account_number) {
 	Account *account;
 
 	for (int i = 0; i < number_of_accounts; i++) {
-		if (accounts[i].get_account_number() == account_number) {
-			account = &accounts[i];
+		if (accounts[i]->get_account_number() == account_number) {
+			account = accounts[i];
 			break;
 		}
 	}
@@ -42,7 +42,7 @@ void Bank::add_account(Account &account) {
 
 	account.set_account_number(number_of_accounts);
 
-	accounts[number_of_accounts] = account;
+	accounts[number_of_accounts] = &account;
 
 	number_of_accounts++;
 }
