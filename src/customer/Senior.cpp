@@ -7,18 +7,22 @@
 
 #include "Senior.h"
 
- float Senior::get_saving_interest() const {
-	return 0;
+string Senior::get_type_of_customer() const{
+	return "Senior";
 }
 
- float Senior::get_check_interest() const {
- 	return 1;
+float Senior::get_savings_interest() const {
+	return SAVINGS_INTEREST;
+}
+
+ float Senior::get_checking_interest() const {
+ 	return CHECK_INTEREST;
  }
 
- float Senior::get_check_charge() const {
- 	return 0;
+ float Senior::get_checking_charge() const {
+	 return CHECK_CHARGE;
  }
 
- float Senior::get_overdraft_penalty() const {
- 	return 0;
+ float Senior::get_overdraft_penality() const {
+ 	return OVERDRAFT_PENALTY;
  }

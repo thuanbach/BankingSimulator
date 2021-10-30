@@ -9,18 +9,23 @@
 #include "Adult.h"
 
 
- float Adult::get_saving_interest() const {
-	return 0;
+string Adult::get_type_of_customer() const{
+	return "Adult";
 }
 
- float Adult::get_check_interest() const {
- 	return 1;
+float Adult::get_savings_interest() const {
+	return SAVINGS_INTEREST;
+}
+
+ float Adult::get_checking_interest() const {
+ 	return CHECK_INTEREST;
  }
 
- float Adult::get_check_charge() const {
- 	return 0;
+ float Adult::get_checking_charge() const {
+	 return CHECK_CHARGE;
  }
 
- float Adult::get_overdraft_penalty() const {
- 	return 0;
+ float Adult::get_overdraft_penality() const {
+ 	return OVERDRAFT_PENALTY;
  }
+

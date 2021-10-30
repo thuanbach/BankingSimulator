@@ -15,35 +15,96 @@
 
 using namespace std;
 
-
-
 class Account {
 
 public:
-	Account() {}
 
-	Account(Customer &aCustomer, int acc_number) :
-			customer(&aCustomer), account_number(acc_number), balance(0) {
-		//transactions = new Tra[];
-	};
+	Account() :
+		account_number(-1),
+		balance(0),
+		customer(NULL),
+		number_of_transactions(0),
+		transactions(new Transaction[MAXIMUM_OF_TRANSACTIONS_PER_ACC]) {
+	}
 
-	double get_balance() const;
-	Customer* get_customer() const;
-	string to_string() const;
+	virtual ~Account(){}
+
+	/**
+	 * customer
+	 */
 
 	void set_customer(Customer &customer);
+
+	Customer* get_customer() const;
+
+	/**
+	 * Balance
+	 */
+
 	void set_balance(double new_balance);
+
+	double get_balance() const;
+
+	/**
+	 * account_number
+	 */
+
+	void set_account_number(int account_number);
 
 	int get_account_number() const;
 
+
+	string to_string() const;
+
+
+	/**
+	 *
+	 */
+
+	virtual void deposit(const double amount, const Date &date);
+
+	virtual void withdraw(const double amount, const Date &date);
+
+	virtual void add_interest(const Date &date);
+
 protected:
+
 	static const int MAXIMUM_OF_TRANSACTIONS_PER_ACC = 1000;
 
-	Customer *customer;
+	bool has_interest(const Date &new_transaction_date) const;
+
+	int get_number_of_days_of_account_term() const;
+
+	void process_transaction(const int transaction_type, const double amount,
+			const Date &date);
+
+	double calculate_interest_amount(float interest, const Date &date) const;
+
+	int calculate_days_from_last_transaction(const Date &date) const;
+
+	/**
+	 * Data
+	 */
+
+
+
 	int account_number;
+
 	double balance;
-	Transaction* transactions;
+
+	Customer *customer;
+
 	int number_of_transactions;
+
+	Transaction *transactions;
+
+
+
+
+private:
+
+	static const int ANNUAL_TERM_IN_DAYS = 365;
+	string get_type_of_customer() const;
 
 };
 

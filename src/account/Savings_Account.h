@@ -9,21 +9,23 @@
 #define SRC_SAVINGS_ACCOUNT_H_
 
 #include "Account.h"
+#include "Date.h"
+
 
 class Savings_Account: public Account {
 
-	public:
-		Savings_Account(): Account(){
+public:
+	Savings_Account(){};
 
-		}
+	~Savings_Account(){};
 
-		void deposit(double amount);
+	virtual void deposit(const double amount, const Date &date);
 
-		void withdraw(double amount);
+	virtual void withdraw(const double amount, const Date &date);
 
-		void add_interest();
+	virtual void add_interest(const Date &date);
 
-	private:
+private:
 
 };
 

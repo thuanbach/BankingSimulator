@@ -10,20 +10,24 @@
 
 #include "Student.h"
 
-float Student::get_saving_interest() const {
-	return 10;
+string Student::get_type_of_customer() const{
+	return "Student";
 }
 
- float Student::get_check_interest() const {
- 	return 1;
+float Student::get_savings_interest() const {
+	return SAVINGS_INTEREST;
+}
+
+ float Student::get_checking_interest() const {
+ 	return CHECK_INTEREST;
  }
 
- float Student::get_check_charge() const {
- 	return 0;
+ float Student::get_checking_charge() const {
+	 return CHECK_CHARGE;
  }
 
- float Student::get_overdraft_penalty() const {
- 	return 0;
+ float Student::get_overdraft_penality() const {
+ 	return OVERDRAFT_PENALTY;
  }
 
 

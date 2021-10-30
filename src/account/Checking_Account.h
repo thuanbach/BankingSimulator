@@ -9,19 +9,22 @@
 #define SRC_CHECKING_ACCOUNT_H_
 
 #include "Account.h"
+#include "Date.h"
+
 
 class Checking_Account: public Account {
 	public:
-		Checking_Account(){
 
-		}
-		string to_string() const;
+		Checking_Account() {}
 
-		void deposit(double amount);
+		~Checking_Account() {}
 
-		void withdraw(double amount);
 
-		void add_interest();
+		virtual void deposit(const double amount, const Date &date);
+
+		virtual void withdraw(const double amount, const Date &date);
+
+		void add_interest(const Date &date);
 
 	private:
 };
