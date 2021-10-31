@@ -24,12 +24,14 @@ void Savings_Account::withdraw(const double amount, const Date &date) {
 }
 
 void Savings_Account::add_interest(const Date &date) {
-	if (!has_interest(date)) {
+
+	int nr_of_terms =  calculate_number_of_annual_terms_from_last_transaction(date);
+
+	if (nr_of_terms == 0 || get_balance() <= 0) {
 		return;
 	}
 
-	double amount = calculate_interest_amount(
-			get_customer()->get_savings_interest(), date);
+	double amount = nr_of_terms * get_customer()->get_savings_interest() *  get_balance();
 
 	process_transaction(INTEREST, amount, date);
 }

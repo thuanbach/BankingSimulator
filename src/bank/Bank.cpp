@@ -23,8 +23,12 @@
 
 using namespace std;
 
+
+const string Bank::ERROR_NO_ACCOUNT_FOUND = "ERROR: No account found";
+const string Bank::TRANSACTION_DATE_IN_THE_PAST = "ERROR: The current transaction date is before the latest transaction date";
+
 Account* Bank::get_account(int account_number) {
-	Account *account;
+	Account *account = NULL;
 
 	for (int i = 0; i < number_of_accounts; i++) {
 		if (accounts[i]->get_account_number() == account_number) {
@@ -57,9 +61,15 @@ void Bank::make_deposit(const int account_number, const double amount,
 	Account *account = get_account(account_number);
 
 	if (account == NULL) {
-		cout << ERROR_NO_ACCOUNT_FOUND;
+		cout << ERROR_NO_ACCOUNT_FOUND << endl;
 		return;
 	}
+
+	if (!account->is_transaction_date_valid(date)) {
+		cout << TRANSACTION_DATE_IN_THE_PAST << endl;
+		return;
+	}
+
 
 	account->add_interest(date);
 
@@ -76,7 +86,12 @@ void Bank::make_withdrawal(const int account_number, const double amount,
 	Account *account = get_account(account_number);
 
 	if (account == NULL) {
-		cout << ERROR_NO_ACCOUNT_FOUND;
+		cout << ERROR_NO_ACCOUNT_FOUND << endl;;
+		return;
+	}
+
+	if (!account->is_transaction_date_valid(date)) {
+		cout << TRANSACTION_DATE_IN_THE_PAST << endl;
 		return;
 	}
 

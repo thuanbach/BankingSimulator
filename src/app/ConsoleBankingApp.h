@@ -39,9 +39,11 @@ private:
 
 	string get_user_input_as_string();
 
-	string get_user_input_as_number();
+	double get_user_input_as_amount();
 
-	string get_user_input_as_age();
+	double get_user_input_as_number();
+
+	unsigned int get_user_input_as_age();
 
 	Date get_user_input_as_date();
 

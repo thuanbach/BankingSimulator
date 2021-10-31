@@ -24,11 +24,13 @@ public:
 	virtual float get_overdraft_penality() const;
 
 	virtual string get_type_of_customer() const;
+
+
 private:
 	 const float SAVINGS_INTEREST = 0.06;
 	 const float CHECK_INTEREST = 0.03;
-	 const float CHECK_CHARGE = 0.02;
-	 const float OVERDRAFT_PENALTY = 50.00;
+	 const float CHECK_CHARGE = 0.03;
+	 const float OVERDRAFT_PENALTY = 40.00;
 
 };
 

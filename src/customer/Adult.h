@@ -20,10 +20,7 @@ public:
 			Customer(name, address, age, phone_number) {
 	}
 
-//	Adult(string cus_name, string cus_address, int cus_age,
-//			string cus_phone_number, string cus_number):
-//
-//	Customer(cus_name, cus_address, cus_age, cus_phone_number, cus_number) {};
+
 	virtual float get_savings_interest() const;
 	virtual float get_checking_interest() const;
 	virtual float get_checking_charge() const;
@@ -32,9 +29,9 @@ public:
 	virtual string get_type_of_customer() const;
 
 private:
-	const float SAVINGS_INTEREST = 0.06;
+	const float SAVINGS_INTEREST = 0.07;
 	const float CHECK_INTEREST = 0.03;
-	const float CHECK_CHARGE = 0.001;
+	const float CHECK_CHARGE = 0;
 	const float OVERDRAFT_PENALTY = 50.00;
 
 };

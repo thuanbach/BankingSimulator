@@ -8,40 +8,26 @@
 
 
 #include <iostream>
-#include "transact.h"
-#include "bank.h"
-#include "Student.h"
 #include "ConsoleBankingApp.h"
-
-// TOD REMOVE HERE
 #include "TestingConsoleBanking.h"
 
 using namespace std;
 
-void test_date(){
+const unsigned int TEST_MODE = 1;
+const unsigned int APP_MODE = 2;
 
-	Date date1(10,10,2018);
+const unsigned int RUNNING_MODE = APP_MODE;
 
-	Date date2(10,10,2020);
-
-	long days = (date2 - date1);
-
-	cout << "days: " << (date2 - date1)  << endl;
-
-	cout << "years:" << (days-1)/365  << endl;;
-
-
-
-
-}
+void testConsoleBankingApp();
 
 int main() {
 
-	testConsoleBankingApp();
-
-	ConsoleBankingApp app;
-
-	app.start_application();
+	if (RUNNING_MODE == TEST_MODE) {
+		testConsoleBankingApp();
+	} else {
+		ConsoleBankingApp app;
+		app.start_application();
+	}
 
 	return 0;
 }

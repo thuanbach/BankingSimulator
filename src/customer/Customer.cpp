@@ -52,19 +52,3 @@ void Customer::set_telephone_number(string &phone_number) {
 void Customer::set_customer_number(int customer_number) {
 	this->customer_number = customer_number;
 }
-
-//float Customer::get_saving_interest() const {
-//	return saving_interest;
-//}
-//
-//float Customer::get_check_interest() const {
-//	return check_interest;
-//}
-//
-//float Customer::get_check_charge() const {
-//	return check_charge;
-//}
-//
-//float Customer::get_overdraft_penalty() const {
-//	return overdraft_penalty;
-//}

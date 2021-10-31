@@ -12,34 +12,46 @@
 
 using namespace std;
 
-
-void Checking_Account::deposit(const double amount,  const Date &date){
+void Checking_Account::deposit(const double amount, const Date &date) {
 
 	process_transaction(DEPOSITE, amount, date);
 }
 
-void Checking_Account::withdraw(const double amount, const Date &date){
+void Checking_Account::withdraw(const double amount, const Date &date) {
 
 	bool overdraft = amount > get_balance();
 
 	process_transaction(WITHDRAW, amount, date);
 
-	process_transaction(CHKCHG,  get_customer()->get_checking_charge(), date);
+	// If checking_charge is empty, don't add transaction
+	float withdraw_charge = get_customer()->get_checking_charge();
+	if (withdraw_charge > 0) {
+		process_transaction(CHKCHG, withdraw_charge, date);
+	}
 
 	if (overdraft) {
-		process_transaction(OVERDRAFT, get_customer()->get_overdraft_penality(), date);
+		process_transaction(OVERDRAFT, get_customer()->get_overdraft_penality(),
+				date);
 	}
 
 }
 
-void Checking_Account::add_interest(const Date& date){
+void Checking_Account::add_interest(const Date &date) {
 
-	if (!has_interest(date)){
+	int nr_of_days = calculate_days_from_last_transaction(date);
+
+	// Don't calculate interest if balance is negative due to overdraft is charged
+	// OR number of days from the last transaction is 0
+	if (get_balance() <= 0 || nr_of_days == 0) {
 		return;
 	}
 
-	double amount = calculate_interest_amount(get_customer()->get_checking_interest(), date);
+	// interest will be calculated daily
+	double interest_per_day = (double) get_customer()->get_checking_interest()
+			/ ANNUAL_TERM_IN_DAYS;
 
-	process_transaction(INTEREST, amount, date);
+	double interest_amount = (interest_per_day * nr_of_days) * get_balance();
+
+	process_transaction(INTEREST, interest_amount, date);
 
 }

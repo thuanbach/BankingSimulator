@@ -36,14 +36,14 @@ public:
 
 	void start();
 
-	void initData();
 
 private:
 
 	Account** accounts;
 	int number_of_accounts;
 
-	const string ERROR_NO_ACCOUNT_FOUND = "ERROR: No account found";
+	static const string ERROR_NO_ACCOUNT_FOUND;
+	static const string TRANSACTION_DATE_IN_THE_PAST;
 
 };
 

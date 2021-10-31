@@ -9,7 +9,6 @@
 #include <iomanip>
 #include "ConsoleBankingApp.h"
 
-
 #include "Senior.h"
 #include "Adult.h"
 #include "Student.h"
@@ -25,111 +24,116 @@ const string ENTER_DATE = "Enter the date yyyy-mm-dd>";
 
 const long STREAM_SIZE_LIMIT = std::numeric_limits<std::streamsize>::max();
 
-
-void ConsoleBankingApp::initData() {
-
-	//testSeniorChecking();
-}
-
-string ConsoleBankingApp::get_user_input_as_string(){
+string ConsoleBankingApp::get_user_input_as_string() {
 	string user_input;
-	getline (cin, user_input);
+	getline(cin, user_input);
 	return user_input;
 }
 
-string ConsoleBankingApp::get_user_input_as_number(){
-	string user_input;
-	getline (cin, user_input);
-	return user_input;
+unsigned int ConsoleBankingApp::get_user_input_as_age() {
+	unsigned int age = 0;
+
+	while (true) {
+
+		cin >> age;
+
+		if (cin.fail()) {
+			cin.clear();
+			cin.ignore(STREAM_SIZE_LIMIT, '\n');
+			cout << "ERROR: Incorrect age. Please try again" << endl;
+			cout << ">";
+			continue;
+		}
+
+		cin.ignore(STREAM_SIZE_LIMIT, '\n');
+
+		if(age <=0){
+			cout << "ERROR: Incorrect age. Please try again" << endl;
+			cout << ">";
+			continue;
+		}
+
+		break;
+	}
+
+	return age;
 }
 
-string ConsoleBankingApp::get_user_input_as_age(){
-	string user_input;
-	getline (cin, user_input);
-	return user_input;
+
+double ConsoleBankingApp::get_user_input_as_number() {
+	int number;
+
+	while (true) {
+
+		cin >> number;
+
+		if (cin.fail()) {
+			cin.clear();
+			cin.ignore(STREAM_SIZE_LIMIT, '\n');
+			cout << "ERROR: Incorrect number. Please try again" << endl;
+			cout << ">";
+			continue;
+		}
+
+		// ignore character return for the next input
+		cin.ignore(STREAM_SIZE_LIMIT, '\n');
+
+		break;
+	}
+
+	return number;
 }
 
-Date ConsoleBankingApp::get_user_input_as_date(){
+double ConsoleBankingApp::get_user_input_as_amount() {
+	double amount;
+
+	while (true) {
+
+		cin >> amount;
+
+		if (cin.fail()) {
+			cin.clear();
+			cin.ignore(STREAM_SIZE_LIMIT, '\n');
+			cout << "ERROR: Incorrect amount. Please try again" << endl;
+			cout << ">";
+			continue;
+		}
+
+		// ignore character return for the next input
+		cin.ignore(STREAM_SIZE_LIMIT, '\n');
+
+		break;
+	}
+
+	return amount;
+}
+
+Date ConsoleBankingApp::get_user_input_as_date() {
 
 	string date_str;
 
-	getline (cin, date_str);
+	int day = -1, month = -1, year = -1;
 
-	// TODO: Check date format here
-	int day, month, year;
-	sscanf(date_str.c_str(), "%4d-%2d-%2d", &year,  &month, &day);
+	bool correctFormat = false;
 
-	return Date(day, month, year);
+	do {
+		getline(cin, date_str);
+
+		int number_of_items_parsed = sscanf(date_str.c_str(), "%4d-%2d-%2d",
+				&year, &month, &day);
+		correctFormat = (number_of_items_parsed == 3);
+
+		if (!correctFormat) {
+			cout << "ERROR: Incorrect date format." << endl;
+			cout << ">";
+		}
+
+	} while (!correctFormat);
+
+	Date date(day, month, year);
+
+	return date;
 }
-
-void ConsoleBankingApp::start_adding_account() {
-
-	string customer_name;
-	string customer_address;
-	int customer_age;
-	string customer_phone;
-
-	cout << "Enter Customer Name>";
-	getline (cin, customer_name);
-
-	cout << "Enter Customer Address>";
-	getline (cin, customer_address);
-
-	cout << "Enter Customer Age>";
-	customer_age = get_user_choice(1, 100);
-
-	cout << "Enter Customer Phone Number>";
-	getline (cin, customer_phone);
-
-
-	int type_of_customer;
-	cout << "Select:" << endl;
-	cout << "0: Senior" << endl;
-	cout << "1: Adult" << endl;
-	cout << "2: Student" << endl;
-	cout << ">";
-	type_of_customer = get_user_choice(0, 2);
-
-	Customer* customer;
-	switch (type_of_customer) {
-		case 0:
-			customer = new Senior(customer_name, customer_address, customer_age, customer_phone);
-			break;
-		case 1:
-			customer = new Adult(customer_name, customer_address, customer_age, customer_phone);
-			break;
-		default:
-			customer = new Student(customer_name, customer_address, customer_age, customer_phone);
-
-	}
-
-	int type_of_account;
-	cout << "Select:" << endl;
-	cout << "0: Checking" << endl;
-	cout << "1: Savings" << endl;
-	cout << ">";
-	type_of_account = get_user_choice(0, 1);
-
-
-	Account* account;
-
-	switch(type_of_account){
-		case 0:
-			account  = new Checking_Account();
-			break;
-		case 1:
-			account =  new Savings_Account();
-			break;
-		default:
-			return;
-
-	}
-
-	account->set_customer(*customer);
-
-	bank.add_account(*account);
-}
-
 
 int ConsoleBankingApp::get_user_choice(int min, int max) {
 	int x = 0;
@@ -141,12 +145,17 @@ int ConsoleBankingApp::get_user_choice(int min, int max) {
 		if (cin.fail()) {
 			cin.clear();
 			cin.ignore(STREAM_SIZE_LIMIT, '\n');
+			cout << "ERROR: Incorrect selection. Please input again." << endl;
+			cout << ">";
 			continue;
 		}
 
 		if (x >= min && x <= max) {
 			cin.ignore(STREAM_SIZE_LIMIT, '\n');
 			break;
+		} else {
+			cout << "ERROR: Incorrect selection. Please input again." << endl;
+			cout << ">";
 		}
 
 	}
@@ -154,64 +163,123 @@ int ConsoleBankingApp::get_user_choice(int min, int max) {
 	return x;
 }
 
+void ConsoleBankingApp::start_adding_account() {
+
+	string customer_name;
+	string customer_address;
+	int customer_age;
+	string customer_phone;
+
+	cout << "Enter Customer Name>";
+	getline(cin, customer_name);
+
+	cout << "Enter Customer Address>";
+	getline(cin, customer_address);
+
+	cout << "Enter Customer Age>";
+	customer_age = get_user_input_as_age();
+
+	cout << "Enter Customer Phone Number>";
+	getline(cin, customer_phone);
+
+	int type_of_customer;
+	cout << "Select:" << endl;
+	cout << "0: Senior" << endl;
+	cout << "1: Adult" << endl;
+	cout << "2: Student" << endl;
+	cout << ">";
+	type_of_customer = get_user_choice(0, 2);
+
+	Customer *customer;
+	switch (type_of_customer) {
+		case 0:
+			customer = new Senior(customer_name, customer_address, customer_age,
+					customer_phone);
+			break;
+		case 1:
+			customer = new Adult(customer_name, customer_address, customer_age,
+					customer_phone);
+			break;
+		default:
+			customer = new Student(customer_name, customer_address, customer_age,
+					customer_phone);
+
+	}
+
+	int type_of_account;
+	cout << "Select:" << endl;
+	cout << "0: Checking" << endl;
+	cout << "1: Savings" << endl;
+	cout << ">";
+	type_of_account = get_user_choice(0, 1);
+
+	Account *account;
+
+	switch (type_of_account) {
+	case 0:
+		account = new Checking_Account();
+		break;
+	case 1:
+		account = new Savings_Account();
+		break;
+	default:
+		return;
+
+	}
+
+	account->set_customer(*customer);
+
+	bank.add_account(*account);
+}
+
 
 void ConsoleBankingApp::start_printing_account() {
 
-	cout << ENTER_ACCOUNT_NUMBER ;
+	cout << ENTER_ACCOUNT_NUMBER;
 
-	int account_number = get_user_choice(0, 1);
+	int account_number = get_user_input_as_number();
 
-	Account* account = bank.get_account(account_number);
+	Account *account = bank.get_account(account_number);
 
 	if (account == NULL) {
-		cout << "No account found";
+		cout << "No account found" << endl;
 	} else {
 		cout << account->to_string();
 		cout << endl;
 	}
 }
 
-
 void ConsoleBankingApp::start_deposit() {
 
-	cout << ENTER_ACCOUNT_NUMBER ;
-	int account_number = get_user_choice(0, 1);
+	cout << ENTER_ACCOUNT_NUMBER;
+	int account_number = get_user_input_as_number();
 
 	cout << ENTER_AMOUNT;
-	//TODO float or integer
-	float amount = get_user_choice(0, INT32_MAX);
+
+	double amount = get_user_input_as_amount();
 
 	cout << ENTER_DATE;
 	Date date = get_user_input_as_date();
-
-	Date testDate(1, 1, 2020);
 
 	bank.make_deposit(account_number, amount, date);
 
 }
 
 void ConsoleBankingApp::start_widthdraw() {
-	cout << ENTER_ACCOUNT_NUMBER ;
-	int account_number = get_user_choice(0, 1);
+	cout << ENTER_ACCOUNT_NUMBER;
+	int account_number = get_user_input_as_number();
 
 	cout << ENTER_AMOUNT;
-	//TODO float or integer
-	float amount = get_user_choice(0, INT32_MAX);
+
+	float amount = get_user_input_as_amount();
 
 	cout << ENTER_DATE;
 	Date date = get_user_input_as_date();
 
-	cout << "TESTING" <<  account_number << endl;
-
 	bank.make_withdrawal(account_number, amount, date);
-
-
 }
 
 void ConsoleBankingApp::start_application() {
-
-	// TODO: Remove
-	initData();
 
 	Account account;
 	int transaction_type;
@@ -230,7 +298,7 @@ void ConsoleBankingApp::start_application() {
 		switch (transaction_type) {
 			case 0:
 				start_adding_account();
-			break;
+				break;
 			case 1:
 				start_deposit();
 				break;
@@ -242,10 +310,11 @@ void ConsoleBankingApp::start_application() {
 				break;
 			case 4:
 				exit = true;
+				cout << "Application shut down";
 				break;
 			default:
 				break;
-		}
+			}
 
 	} while (!exit);
 }
