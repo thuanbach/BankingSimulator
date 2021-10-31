@@ -45,7 +45,7 @@ void testBankingWithAccountType(unsigned int type_of_account) {
 
 		Date depositeDate(10, 10, 2018);
 
-		bank.make_deposit(account->get_account_number(), 2000, depositeDate);
+		bank.make_deposit(account->get_account_number(), 500, depositeDate);
 
 		Date withdrawDate(10, 10, 2020);
 

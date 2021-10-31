@@ -26,6 +26,11 @@ public:
 	virtual void add_interest(const Date &date);
 
 private:
+	int calculate_number_of_annual_terms_from_last_transaction(
+				const Date &date) const;
+
+	int calculate_days_from_last_transaction_by_annual_terms(
+				const unsigned int nr_of_annual_terms) const;
 
 };
 

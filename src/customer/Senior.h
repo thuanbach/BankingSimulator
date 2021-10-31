@@ -27,8 +27,8 @@ public:
 
 
 private:
-	 const float SAVINGS_INTEREST = 0.06;
-	 const float CHECK_INTEREST = 0.03;
+	 const float SAVINGS_INTEREST = 0.035;
+	 const float CHECK_INTEREST = 0.004;
 	 const float CHECK_CHARGE = 0.03;
 	 const float OVERDRAFT_PENALTY = 40.00;
 

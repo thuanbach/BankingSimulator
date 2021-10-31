@@ -67,22 +67,12 @@ public:
 protected:
 
 
-	static const int MAXIMUM_OF_TRANSACTIONS_PER_ACC = 1000;
-
-	bool has_interest(const Date &new_transaction_date) const;
-
-	int get_number_of_days_of_account_term() const;
-
 	void process_transaction(const int transaction_type, const double amount,
 			const Date &date);
 
-	double calculate_interest_amount(float interest, const Date &date) const;
+	static const int ANNUAL_TERM_IN_DAYS = 365;
 
-	int calculate_days_from_last_transaction(const Date &date) const;
-
-	int calculate_number_of_annual_terms_from_last_transaction(
-			const Date &date) const;
-
+	Date* get_latest_transaction_date() const;
 
 private:
 
@@ -95,6 +85,9 @@ private:
 	int number_of_transactions;
 
 	Transaction *transactions;
+
+
+	static const int MAXIMUM_OF_TRANSACTIONS_PER_ACC = 1000;
 };
 
 #endif /* SRC_ACCOUNT_H_ */

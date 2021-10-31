@@ -27,7 +27,10 @@ class Checking_Account: public Account {
 		virtual void add_interest(const Date &date);
 
 	private:
-		static const int ANNUAL_TERM_IN_DAYS = 365;
+
+		int calculate_days_from_last_transaction(const Date &date) const;
+
+
 };
 
 

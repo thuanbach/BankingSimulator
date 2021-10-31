@@ -26,7 +26,24 @@ const long STREAM_SIZE_LIMIT = std::numeric_limits<std::streamsize>::max();
 
 string ConsoleBankingApp::get_user_input_as_string() {
 	string user_input;
-	getline(cin, user_input);
+
+	do {
+		getline(cin, user_input);
+
+		size_t start = user_input.find_first_not_of(" \n\r\t");
+		user_input = (start == std::string::npos) ? "" : user_input.substr(start);
+
+		if (user_input.length() == 0) {
+			cout << "ERROR: data is empty. Please input again" << endl;
+			cout << ">";
+			continue;
+		}
+
+		break;
+
+	} while(true);
+
+
 	return user_input;
 }
 
@@ -40,7 +57,7 @@ unsigned int ConsoleBankingApp::get_user_input_as_age() {
 		if (cin.fail()) {
 			cin.clear();
 			cin.ignore(STREAM_SIZE_LIMIT, '\n');
-			cout << "ERROR: Incorrect age. Please try again" << endl;
+			cout << "ERROR: Incorrect age. Please input again." << endl;
 			cout << ">";
 			continue;
 		}
@@ -48,7 +65,7 @@ unsigned int ConsoleBankingApp::get_user_input_as_age() {
 		cin.ignore(STREAM_SIZE_LIMIT, '\n');
 
 		if(age <=0){
-			cout << "ERROR: Incorrect age. Please try again" << endl;
+			cout << "ERROR: Incorrect age. Please input again." << endl;
 			cout << ">";
 			continue;
 		}
@@ -58,7 +75,6 @@ unsigned int ConsoleBankingApp::get_user_input_as_age() {
 
 	return age;
 }
-
 
 double ConsoleBankingApp::get_user_input_as_number() {
 	int number;
@@ -70,7 +86,7 @@ double ConsoleBankingApp::get_user_input_as_number() {
 		if (cin.fail()) {
 			cin.clear();
 			cin.ignore(STREAM_SIZE_LIMIT, '\n');
-			cout << "ERROR: Incorrect number. Please try again" << endl;
+			cout << "ERROR: Incorrect number. Please input again." << endl;
 			cout << ">";
 			continue;
 		}
@@ -94,7 +110,7 @@ double ConsoleBankingApp::get_user_input_as_amount() {
 		if (cin.fail()) {
 			cin.clear();
 			cin.ignore(STREAM_SIZE_LIMIT, '\n');
-			cout << "ERROR: Incorrect amount. Please try again" << endl;
+			cout << "ERROR: Incorrect amount. Please input again." << endl;
 			cout << ">";
 			continue;
 		}
@@ -114,21 +130,21 @@ Date ConsoleBankingApp::get_user_input_as_date() {
 
 	int day = -1, month = -1, year = -1;
 
-	bool correctFormat = false;
-
 	do {
 		getline(cin, date_str);
 
 		int number_of_items_parsed = sscanf(date_str.c_str(), "%4d-%2d-%2d",
 				&year, &month, &day);
-		correctFormat = (number_of_items_parsed == 3);
+		bool correctFormat = (number_of_items_parsed == 3);
 
 		if (!correctFormat) {
 			cout << "ERROR: Incorrect date format." << endl;
 			cout << ">";
+			continue;
 		}
 
-	} while (!correctFormat);
+		break;
+	} while (true);
 
 	Date date(day, month, year);
 
@@ -171,16 +187,16 @@ void ConsoleBankingApp::start_adding_account() {
 	string customer_phone;
 
 	cout << "Enter Customer Name>";
-	getline(cin, customer_name);
+	customer_name = get_user_input_as_string();
 
 	cout << "Enter Customer Address>";
-	getline(cin, customer_address);
+	customer_address = get_user_input_as_string();
 
 	cout << "Enter Customer Age>";
 	customer_age = get_user_input_as_age();
 
 	cout << "Enter Customer Phone Number>";
-	getline(cin, customer_phone);
+	customer_phone = get_user_input_as_string();
 
 	int type_of_customer;
 	cout << "Select:" << endl;
@@ -231,7 +247,6 @@ void ConsoleBankingApp::start_adding_account() {
 
 	bank.add_account(*account);
 }
-
 
 void ConsoleBankingApp::start_printing_account() {
 

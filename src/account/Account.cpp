@@ -5,6 +5,7 @@
  *      Author: Thuan Bach
  */
 #include <sstream>
+#include <iomanip>
 #include "Account.h"
 #include "Adult.h"
 #include "Student.h"
@@ -69,7 +70,7 @@ string Account::to_string() const {
 
 	result << "Type of customer: " << customer->get_type_of_customer() << endl;
 
-	result << "Balance: " << CURRENCY_CHARACTER << balance << endl;
+	result << "Balance: " << CURRENCY_CHARACTER << fixed << setprecision(2) << balance << endl;
 
 	for (int i = 0; i < number_of_transactions; i++) {
 		result << transactions[i].to_string() << endl;
@@ -88,10 +89,6 @@ void Account::set_balance(double new_balance) {
 	balance = new_balance;
 }
 
-int Account::get_number_of_days_of_account_term() const {
-	return 0;
-}
-
 bool Account::is_transaction_date_valid(const Date &date) {
 	if (number_of_transactions == 0) {
 		return true;
@@ -104,46 +101,15 @@ bool Account::is_transaction_date_valid(const Date &date) {
 	return date >= latest_transaction_date;
 }
 
-int Account::calculate_days_from_last_transaction(const Date &date) const {
 
+Date* Account::get_latest_transaction_date() const{
 	if (number_of_transactions == 0) {
-		return 0;
+		return NULL;
 	}
 
-	Transaction latest_transaction = transactions[number_of_transactions - 1];
+	Date date = transactions[number_of_transactions - 1].get_transaction_date();
 
-	Date latest_transaction_date = latest_transaction.get_transaction_date();
-
-	// the left right must be a const date
-	int difference_in_days = -(latest_transaction_date - date);
-
-	return difference_in_days;
-}
-
-int Account::calculate_number_of_annual_terms_from_last_transaction(
-		const Date &date) const {
-
-	if (number_of_transactions == 0) {
-		return 0;
-	}
-
-	Transaction latest_transaction = transactions[number_of_transactions - 1];
-
-	Date latest_transaction_date = latest_transaction.get_transaction_date();
-
-	Date next_year = Date(latest_transaction_date.Day(),
-			latest_transaction_date.Month(),
-			latest_transaction_date.Year() + 1);
-
-	int nr_of_annual_terms = 0;
-
-	while (next_year < date) {
-		nr_of_annual_terms++;
-		next_year = Date(next_year.Day(), next_year.Month(),
-				next_year.Year() + 1);
-	}
-
-	return nr_of_annual_terms;
+	return new Date(date.Day(), date.Month(), date.Year());
 }
 
 

@@ -29,8 +29,8 @@ public:
 	virtual string get_type_of_customer() const;
 
 private:
-	const float SAVINGS_INTEREST = 0.07;
-	const float CHECK_INTEREST = 0.03;
+	const float SAVINGS_INTEREST = 0.03;
+	const float CHECK_INTEREST = 0.005;
 	const float CHECK_CHARGE = 0;
 	const float OVERDRAFT_PENALTY = 50.00;
 

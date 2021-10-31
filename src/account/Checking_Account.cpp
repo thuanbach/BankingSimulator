@@ -12,6 +12,20 @@
 
 using namespace std;
 
+int Checking_Account::calculate_days_from_last_transaction(const Date &date) const {
+
+	Date* latest_transaction_date  = get_latest_transaction_date();
+
+	if ( latest_transaction_date == NULL){
+		return 0;
+	}
+
+	int difference_in_days = -(*latest_transaction_date - date);
+
+	return difference_in_days;
+}
+
+
 void Checking_Account::deposit(const double amount, const Date &date) {
 
 	process_transaction(DEPOSITE, amount, date);
