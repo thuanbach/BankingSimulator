@@ -5,8 +5,11 @@
  *      Author: Thuan Bach
  */
 
-#include "ConsoleBankingApp.h"
 #include <limits>
+#include <iomanip>
+#include "ConsoleBankingApp.h"
+
+
 #include "Senior.h"
 #include "Adult.h"
 #include "Student.h"
@@ -22,27 +25,10 @@ const string ENTER_DATE = "Enter the date yyyy-mm-dd>";
 
 const long STREAM_SIZE_LIMIT = std::numeric_limits<std::streamsize>::max();
 
-Bank bank;
-
-
 
 void ConsoleBankingApp::initData() {
 
-	Customer* customer = new Senior("Thuan", "Le DUC THO", 11, "3038403948");
-	Account* account  =  new Checking_Account();
-	account->set_customer(*customer);
-	bank.add_account(*account);
-
-	Date depositeDate(11,10, 2018);
-
-	bank.make_deposit(0, 500, depositeDate);
-
-	Date withdrawDate(10,10, 2020);
-
-	bank.make_withdrawal(0, 100, withdrawDate);
-
-
-	cout << bank.get_account(0)->to_string();
+	//testSeniorChecking();
 }
 
 string ConsoleBankingApp::get_user_input_as_string(){
@@ -83,25 +69,25 @@ void ConsoleBankingApp::start_adding_account() {
 	int customer_age;
 	string customer_phone;
 
-	cout << "Enter Customer Name ";
+	cout << "Enter Customer Name>";
 	getline (cin, customer_name);
 
-	cout << "Enter Customer Address ";
+	cout << "Enter Customer Address>";
 	getline (cin, customer_address);
 
-	cout << "Enter Customer Age ";
+	cout << "Enter Customer Age>";
 	customer_age = get_user_choice(1, 100);
 
-	cout << "Enter Customer Phone Number ";
+	cout << "Enter Customer Phone Number>";
 	getline (cin, customer_phone);
 
-	cout << customer_name << " " << customer_address << " " << customer_age << " " << customer_phone;
 
 	int type_of_customer;
 	cout << "Select:" << endl;
 	cout << "0: Senior" << endl;
 	cout << "1: Adult" << endl;
 	cout << "2: Student" << endl;
+	cout << ">";
 	type_of_customer = get_user_choice(0, 2);
 
 	Customer* customer;
@@ -121,6 +107,7 @@ void ConsoleBankingApp::start_adding_account() {
 	cout << "Select:" << endl;
 	cout << "0: Checking" << endl;
 	cout << "1: Savings" << endl;
+	cout << ">";
 	type_of_account = get_user_choice(0, 1);
 
 
@@ -129,7 +116,6 @@ void ConsoleBankingApp::start_adding_account() {
 	switch(type_of_account){
 		case 0:
 			account  = new Checking_Account();
-
 			break;
 		case 1:
 			account =  new Savings_Account();
@@ -142,9 +128,6 @@ void ConsoleBankingApp::start_adding_account() {
 	account->set_customer(*customer);
 
 	bank.add_account(*account);
-
-	 cout << "Account:" << BLANK_CHARACTER << account->get_account_number() << BLANK_CHARACTER << "Added";
-
 }
 
 

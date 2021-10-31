@@ -50,7 +50,7 @@ double Account::calculate_interest_amount(float interest_rate,
 		const Date &date) const {
 	int nr_of_days = calculate_days_from_last_transaction(date);
 
-	return (nr_of_days - 1 / ANNUAL_TERM_IN_DAYS) * interest_rate;
+	return (nr_of_days - 1) / ANNUAL_TERM_IN_DAYS * interest_rate;
 }
 
 
@@ -137,7 +137,7 @@ int Account::calculate_days_from_last_transaction(const Date &date) const {
 
 bool Account::has_interest(const Date &date) const {
 
-	return calculate_days_from_last_transaction(date) > 0;
+	return (calculate_days_from_last_transaction(date) -1) /ANNUAL_TERM_IN_DAYS > 0;
 }
 
 void Account::add_interest(const Date &date) {

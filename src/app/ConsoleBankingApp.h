@@ -45,6 +45,8 @@ private:
 
 	Date get_user_input_as_date();
 
+	Bank bank;
+
 };
 
 #endif /* SRC_CONSOLEBANKINGAPP_H_ */

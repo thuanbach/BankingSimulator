@@ -13,6 +13,9 @@
 #include "Student.h"
 #include "ConsoleBankingApp.h"
 
+// TOD REMOVE HERE
+#include "TestingConsoleBanking.h"
+
 using namespace std;
 
 void test_date(){
@@ -33,6 +36,8 @@ void test_date(){
 }
 
 int main() {
+
+	testConsoleBankingApp();
 
 	ConsoleBankingApp app;
 

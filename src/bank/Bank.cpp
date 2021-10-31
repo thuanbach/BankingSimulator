@@ -8,6 +8,8 @@
 #include <iostream>
 #include <stdio.h>
 #include <limits>
+#include <iomanip>
+
 #include "Bank.h"
 #include "Customer.h"
 #include "Senior.h"
@@ -45,6 +47,8 @@ void Bank::add_account(Account &account) {
 	accounts[number_of_accounts] = &account;
 
 	number_of_accounts++;
+
+	cout << "Account: " << account.get_account_number() << " Added" << endl;
 }
 
 void Bank::make_deposit(const int account_number, const double amount,
@@ -60,6 +64,10 @@ void Bank::make_deposit(const int account_number, const double amount,
 	account->add_interest(date);
 
 	account->deposit(amount, date);
+
+	cout << "Deposit in " << account_number << " amount: $" << fixed
+				<< setprecision(2) << amount << " on " << date << " new balance: $"
+				<< fixed << setprecision(2) << account->get_balance() << endl;
 }
 
 void Bank::make_withdrawal(const int account_number, const double amount,
@@ -75,5 +83,10 @@ void Bank::make_withdrawal(const int account_number, const double amount,
 	account->add_interest(date);
 
 	account->withdraw(amount, date);
+
+	cout << "Withdraw from " << account_number << " amount: $" << fixed
+			<< setprecision(2) << amount << " on " << date << " new balance: $"
+			<< fixed << setprecision(2) << account->get_balance() << endl;
+
 }
 

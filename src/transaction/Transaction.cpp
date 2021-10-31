@@ -36,7 +36,7 @@ string Transaction::to_string() const {
 			result << "CHKCHG";
 			break;
 		case OVERDRAFT:
-			result << "CHKCHG";
+			result << "OVERDRAFT";
 			break;
 		default:
 			break;
