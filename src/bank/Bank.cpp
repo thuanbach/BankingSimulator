@@ -1,10 +1,14 @@
-/*
- * Bank.cpp
+/**
  *
- *  Created on: Oct 23, 2021
- *      Author: Thuan Bach
+ * @file Bank.cpp
+ * @author Thuan Bach
+ * @date October 23, 2021
+ *
+ * The main module is responsible for storing the main application's data and execute .
+ * It is responsible for receiving users' input and invoke corresponding functionalities
+ * of Bank class such as adding an account, make deposit, make withdrawal, or query accounts
+ *
  */
-
 #include <iostream>
 #include <stdio.h>
 #include <limits>

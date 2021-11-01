@@ -1,8 +1,12 @@
-/*
- * Checking_Account.h
+/**
  *
- *  Created on: Oct 23, 2021
- *      Author: Thuan Bach
+ * @file Checking_Account.cpp
+ * @author Thuan Bach
+ * @date October 23, 2021
+ *
+ * This class extends from the Account to implement functionalities for a checking account.
+ * Functionalities for each kind of accounts are different.
+ *
  */
 
 #ifndef SRC_CHECKING_ACCOUNT_H_
@@ -29,7 +33,6 @@ class Checking_Account: public Account {
 	private:
 
 		int calculate_days_from_last_transaction(const Date &date) const;
-
 
 };
 

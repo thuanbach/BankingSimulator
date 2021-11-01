@@ -1,9 +1,13 @@
-/*
- * Account.cpp
+/**
  *
- *  Created on: Oct 24, 2021
- *      Author: Thuan Bach
+ * @file ConsoleBankingApp.cpp
+ * @author Thuan Bach
+ * @date October 24, 2021
+ *
+ * This module store information regarding accounts such as account number, balance, etc.
+ *
  */
+
 #include <sstream>
 #include <iomanip>
 #include "Account.h"

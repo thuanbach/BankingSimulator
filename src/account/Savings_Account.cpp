@@ -1,10 +1,13 @@
-/*
- * Savings_Account.cpp
+/**
  *
- *  Created on: Oct 30, 2021
- *      Author: Thuan Bach
+ * @file Savings_Account.cpp
+ * @author Thuan Bach
+ * @date October 30, 2021
+ *
+ * This class extends from the Account to implement functionalities for a savings account.
+ * Functionalities for each kind of accounts are different.
+ *
  */
-
 #include "Savings_Account.h"
 #include "Date.h"
 
@@ -62,8 +65,17 @@ void Savings_Account::withdraw(const double amount, const Date &date) {
 	if (overdraft) {
 		process_transaction(OVERDRAFT, get_customer()->get_overdraft_penality(), date);
 	}
-
 }
+
+
+/**
+ *
+ *
+ *	Add interest to a savings account
+ * 	The interest will be calculated by number of days
+ *
+ *
+ */
 
 void Savings_Account::add_interest(const Date &date) {
 

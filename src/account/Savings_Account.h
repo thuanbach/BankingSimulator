@@ -1,10 +1,13 @@
-/*
- * Savings_Account.h
+/**
  *
- *  Created on: Oct 20, 2021
- *      Author: Thuan Bach
+ * @file Savings_Account.h
+ * @author Thuan Bach
+ * @date October 20, 2021
+ *
+ * This class extends from the Account to implement functionalities for a savings account.
+ * Functionalities for each kind of accounts are different.
+ *
  */
-
 #ifndef SRC_SAVINGS_ACCOUNT_H_
 #define SRC_SAVINGS_ACCOUNT_H_
 

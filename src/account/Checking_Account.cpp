@@ -1,8 +1,12 @@
-/*
- * Checking_Account.cpp
+/**
  *
- *  Created on: Oct 24, 2021
- *      Author: Thuan Bach
+ * @file Checking_Account.cpp
+ * @author Thuan Bach
+ * @date October 24, 2021
+ *
+ * This class extends from the Account to implement functionalities for a checking account.
+ * Functionalities for each kind of accounts are different.
+ *
  */
 
 #include <iostream>
@@ -67,5 +71,4 @@ void Checking_Account::add_interest(const Date &date) {
 	double interest_amount = (interest_per_day * nr_of_days) * get_balance();
 
 	process_transaction(INTEREST, interest_amount, date);
-
 }

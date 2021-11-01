@@ -1,8 +1,14 @@
-/*
- * ConsoleBankingApp.cpp
+/**
  *
- *  Created on: Oct 26, 2021
- *      Author: Thuan Bach
+ * @file ConsoleBankingApp.cpp
+ * @author Thuan Bach
+ * @date October 26, 2021
+ *
+ * The main module of the application where users will interact with.
+ * It is responsible for receiving users' input and invoke corresponding functionalities
+ * of Bank class such as adding an account, make deposit, make withdrawal, or query accounts
+ *
+ *
  */
 
 #include <limits>
