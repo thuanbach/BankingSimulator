@@ -25,6 +25,13 @@ const unsigned int SENIOR_CUSTOMER = 1;
 const unsigned int STUDENT_CUSTOMER = 2;
 
 
+/**
+ * Initiate mock data for Customer object based on customer_type
+ *
+ * @param	customer_type	Type of customer
+ *
+ * @return	Customer* A point to Customer.
+ */
 Customer* initCustomer(unsigned int customer_type) {
 	Customer *customer;
 	if (customer_type == ADULT_CUSTOMER) {
@@ -38,6 +45,12 @@ Customer* initCustomer(unsigned int customer_type) {
 	return customer;
 }
 
+/**
+ *	Test the functionalities implemented in Bank module for for a a given account type with 3 kindsof customers
+ *
+ *	@param type_of_account	Type of account
+ *	@return N/A
+ */
 void testBankingWithAccountType(unsigned int type_of_account) {
 
 	for (unsigned int i = 0; i < 3; i++) {
@@ -69,15 +82,33 @@ void testBankingWithAccountType(unsigned int type_of_account) {
 	}
 }
 
+/**
+ *	Test the functionalities implemented in Bank module for Checking account.
+ *
+ *	@param N/A
+ *	@return N/A
+ */
 void testCheckingAccount() {
 	testBankingWithAccountType(CHECKING_ACCOUNT);
 }
 
+/**
+ *	Test the functionalities implemented in Bank module for Savings account.
+ *
+ *	@param N/A
+ *	@return N/A
+ */
 void testSavingsAccount() {
 	testBankingWithAccountType(SAVINGS_ACCOUNT);
 }
 
-void testConsoleBankingApp() {
+/**
+ *	Test the functionalities implemented in Bank module.
+ *
+ *	@param N/A
+ *	@return N/A
+ */
+void testBankingApp() {
 
 	testCheckingAccount();
 	testSavingsAccount();

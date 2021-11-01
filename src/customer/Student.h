@@ -1,6 +1,6 @@
 /**
  *
- * @file Student.cpp
+ * @file Student.h
  * @author Thuan Bach
  * @date October 24, 2021
  *

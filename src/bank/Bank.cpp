@@ -31,6 +31,15 @@ using namespace std;
 const string Bank::ERROR_NO_ACCOUNT_FOUND = "ERROR: No account found";
 const string Bank::TRANSACTION_DATE_IN_THE_PAST = "ERROR: The current transaction date is before the latest transaction date";
 
+
+/**
+ * Returns the account with the acount number given
+ *
+ * @param	account_number The account number
+ *
+ * @return	Account*	The account is got from the account number
+ *
+ */
 Account* Bank::get_account(int account_number) {
 	Account *account = NULL;
 
@@ -44,6 +53,12 @@ Account* Bank::get_account(int account_number) {
 	return account;
 }
 
+/**
+ * Add an account to the Bank
+ *
+ * @param	account	The account that needs to added.
+ * @return	N/A
+ */
 void Bank::add_account(Account &account) {
 
 	// initiate customer_number and account_number got from bank
@@ -59,6 +74,15 @@ void Bank::add_account(Account &account) {
 	cout << "Account: " << account.get_account_number() << " Added" << endl;
 }
 
+/**
+ * Make a deposit from the account
+ *
+ * @param	account_number	The account number
+ * @param	amount	The deposit amount
+ * @param	date	The deposit's date
+ *
+ * @return	N/A
+ */
 void Bank::make_deposit(const int account_number, const double amount,
 		const Date &date) {
 
@@ -84,6 +108,15 @@ void Bank::make_deposit(const int account_number, const double amount,
 				<< fixed << setprecision(2) << account->get_balance() << endl;
 }
 
+/**
+ * Make a withdrawal from the account
+ *
+ * @param	account_number	The account number
+ * @param	amount	The deposit amount
+ * @param	date	The deposit's date
+ *
+ * @return	N/A
+ */
 void Bank::make_withdrawal(const int account_number, const double amount,
 		const Date &date) {
 

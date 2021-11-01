@@ -1,6 +1,6 @@
 /**
  *
- * @file Transaction.cpp
+ * @file Transaction.h
  * @author Thuan Bach
  * @date October 20, 2021
  *

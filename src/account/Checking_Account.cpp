@@ -5,7 +5,6 @@
  * @date October 24, 2021
  *
  * This class extends from the Account to implement functionalities for a checking account.
- * Functionalities for each kind of accounts are different.
  *
  */
 
@@ -16,6 +15,13 @@
 
 using namespace std;
 
+/**
+ * Calculate number of days from the latest transaction compared with the given date
+ *
+ * @param Date The given date
+ *
+ * @return int	Number of days from the latest transaction date compared with the given date
+ */
 int Checking_Account::calculate_days_from_last_transaction(const Date &date) const {
 
 	Date* latest_transaction_date  = get_latest_transaction_date();
@@ -29,12 +35,25 @@ int Checking_Account::calculate_days_from_last_transaction(const Date &date) con
 	return difference_in_days;
 }
 
-
+/**
+ * The implement the deposit method for the checking account
+ *
+ * @param	amount	The deposit amount
+ * @param 	date	The deposit's date
+ * @return	N/A
+ */
 void Checking_Account::deposit(const double amount, const Date &date) {
 
 	process_transaction(DEPOSITE, amount, date);
 }
 
+/**
+ * The implement the withdraw method for the checking account
+ *
+ * @param	amount	The amount that is withdrawn
+ * @param 	date	The withdrwal's date
+ * @return	N/A
+ */
 void Checking_Account::withdraw(const double amount, const Date &date) {
 
 	bool overdraft = amount > get_balance();
@@ -54,6 +73,12 @@ void Checking_Account::withdraw(const double amount, const Date &date) {
 
 }
 
+/**
+ * The implement the add_interest method for the checking account
+ *
+ * @param 	date	The date that the interest is added
+ * @return	N/A
+ */
 void Checking_Account::add_interest(const Date &date) {
 
 	int nr_of_days = calculate_days_from_last_transaction(date);

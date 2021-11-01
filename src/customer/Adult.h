@@ -1,6 +1,6 @@
 /**
  *
- * @file Adult.cpp
+ * @file Adult.h
  * @author Thuan Bach
  * @date October 24, 2021
  *

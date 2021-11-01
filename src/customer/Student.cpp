@@ -8,8 +8,6 @@
  * checking charges or overdraft penalty for this kind of the Customer.
  *
  */
-#ifndef SRC_CUSTOMER_STUDENT_CPP_
-#define SRC_CUSTOMER_STUDENT_CPP_
 
 #include "Student.h"
 
@@ -27,31 +25,29 @@ float Student::get_savings_interest() const {
 }
 
 /**
- * Get savings interest
+ * Get checking interest
  *
- * @return	float The checking interest of Student customers.
+ * @return	float The checking interest of Senior customers.
  */
  float Student::get_checking_interest() const {
  	return CHECK_INTEREST;
  }
 
  /**
- * Get savings interest
+ * Get checking charge
  *
- * @return	float The checking charge of Student customers.
+ * @return	float The checking charge of Senior customers.
  */
  float Student::get_checking_charge() const {
 	 return CHECK_CHARGE;
  }
 
-/**
- * Get savings interest
+ /**
+ * Get overdraft penalty
  *
- * @return	float The checking charge of Student customers.
+ * @return	float The checking charge of Senior customers.
  */
  float Student::get_overdraft_penalty() const {
  	return OVERDRAFT_PENALTY;
  }
 
-
-#endif /* SRC_CUSTOMER_STUDENT_CPP_ */

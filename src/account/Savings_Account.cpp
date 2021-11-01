@@ -5,12 +5,18 @@
  * @date October 30, 2021
  *
  * This class extends from the Account to implement functionalities for a savings account.
- * Functionalities for each kind of accounts are different.
  *
  */
 #include "Savings_Account.h"
 #include "Date.h"
 
+/**
+ * Calculate number of days from the latest transaction compared to the number of terms given
+ *
+ * @param Date The given date
+ *
+ * @return int	Calculate number of days from the latest transaction compared to the number of terms given
+ */
 int Savings_Account::calculate_days_from_last_transaction_by_annual_terms(const unsigned int nr_of_terms) const {
 
 	Date* latest_transaction_date  = get_latest_transaction_date();
@@ -29,6 +35,14 @@ int Savings_Account::calculate_days_from_last_transaction_by_annual_terms(const 
 	return difference_in_days;
 }
 
+/**
+ * Calculate number of annual terms from the latest transaction.
+ * For example: 2018-10-10 -> 2020-10-10 is 2 terms, but 2018-10-10 -> 2020-10-09 is 1 term
+ *
+ * @param Date The given date
+ *
+ * @return int	number of annual terms from the latest transaction compared to the given date
+ */
 int Savings_Account::calculate_number_of_annual_terms_from_last_transaction(
 		const Date &date) const {
 
@@ -53,10 +67,24 @@ int Savings_Account::calculate_number_of_annual_terms_from_last_transaction(
 	return nr_of_annual_terms;
 }
 
+/**
+ * The implement the deposit method for the savings account
+ *
+ * @param	amount	The deposit amount
+ * @param 	date	The deposit's date
+ * @return	N/A
+ */
 void Savings_Account::deposit(const double amount, const Date &date) {
 	process_transaction(DEPOSITE, amount, date);
 }
 
+/**
+ * The implement the withdraw method for the savings account
+ *
+ * @param	amount	The amount that is withdrawn
+ * @param 	date	The withdrwal's date
+ * @return	N/A
+ */
 void Savings_Account::withdraw(const double amount, const Date &date) {
 	bool overdraft = amount > get_balance();
 
@@ -69,14 +97,11 @@ void Savings_Account::withdraw(const double amount, const Date &date) {
 
 
 /**
+ * The implement the add_interest method for the savings account
  *
- *
- *	Add interest to a savings account
- * 	The interest will be calculated by number of days
- *
- *
+ * @param 	date	The date that the interest is added
+ * @return	N/A
  */
-
 void Savings_Account::add_interest(const Date &date) {
 
 	int nr_of_terms =  calculate_number_of_annual_terms_from_last_transaction(date);

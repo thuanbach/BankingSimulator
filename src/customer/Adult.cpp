@@ -30,7 +30,7 @@ float Adult::get_savings_interest() const {
 }
 
 /**
- * Get savings interest
+ * Get checking interest
  *
  * @return	float The checking interest of Adult customers.
  */
@@ -39,7 +39,7 @@ float Adult::get_savings_interest() const {
  }
 
  /**
- * Get savings interest
+ * Get checking charge
  *
  * @return	float The checking charge of Adult customers.
  */
@@ -48,7 +48,7 @@ float Adult::get_savings_interest() const {
  }
 
  /**
- * Get savings interest
+ * Get overdraft penalty
  *
  * @return	float The checking charge of Adult customers.
  */

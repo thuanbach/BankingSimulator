@@ -1,12 +1,13 @@
 /**
  *
- * @file ConsoleBankingApp.cpp
+ * @file Account.cpp
  * @author Thuan Bach
  * @date October 24, 2021
  *
- * This module store information regarding accounts such as account number, balance, etc.
- * There are 2 kinds of accounts: Checking and Savings. Functionalities regarding withdrawal, deposit and interest for each kind of accounts are different.
- * And they will be implemented in derived classes instead of Account class.
+ * <p>This stores information regarding accounts such as account number, balance, etc.</p>
+ * <p>There are 2 kinds of accounts: Checking and Savings. </p>
+ * <p>Functionalities regarding withdrawal, deposit and interest for each kind of accounts are different.</p>
+ * <p>And they will be implemented in derived classes instead of Account class.</p>
  *
  */
 
@@ -17,24 +18,53 @@
 #include "Student.h"
 #include "Senior.h"
 
-char CURRENCY_CHARACTER = '$';
-
+/**
+ * Returns the account balance
+ *
+ * @return 	double The current account balance
+ */
 double Account::get_balance() const {
 	return balance;
 }
 
+/**
+ * Returns the account number
+ *
+ * @return	int	The account number
+ */
 int Account::get_account_number() const {
 	return account_number;
 }
 
+/**
+ * Set the account number
+ *
+ * @param	account_number	The account number
+ */
 void Account::set_account_number(int acc_number) {
 	account_number = acc_number;
 }
 
+
+/**
+ * Get a customer from the account
+ *
+ * @param	N/A
+ * @return 	Customer* A pointer to the customer object of the account
+ */
 Customer* Account::get_customer() const {
 	return customer;
 }
 
+/**
+ * Process a transaction for the account. This updates the balance and adds a new transaction to the account
+ *
+ * @param	transaction_type	Type of transaction
+ * @param	amount	The amount for the transaction
+ * @param	date	The transaction date
+ *
+ * @return N/A
+ */
 void Account::process_transaction(int transaction_type, double amount,
 		const Date &date) {
 
@@ -69,8 +99,17 @@ void Account::process_transaction(int transaction_type, double amount,
 	number_of_transactions++;
 }
 
+/**
+ * Returns a string that represents the account information
+ *
+ * @param	N/A
+ * @return	string	A string object that represents the account information
+ */
 string Account::to_string() const {
 	ostringstream result;
+
+	const char CURRENCY_CHARACTER = '$';
+
 	result << "Account: " << account_number << endl;
 	result << "Owner: " << customer->get_name() << endl;
 
@@ -86,15 +125,33 @@ string Account::to_string() const {
 
 }
 
+/**
+ * Set a customer for the account
+ *
+ * @param	customer	A customer object
+ * @return 	N/A
+ */
 void Account::set_customer(Customer &customer) {
 
 	this->customer = &customer;
 }
 
+/**
+ * Update the account balance
+ *
+ * @param	new_balance	The new balance of the account
+ * @return 	N/A
+ */
 void Account::set_balance(double new_balance) {
 	balance = new_balance;
 }
 
+/**
+ * Check if the transaction date validity. The new transaction date must be equal or greater than the latest transaction date
+ *
+ * @param date	the date transaction
+ * @return	boolean	Represents if transaction is valid
+ */
 bool Account::is_transaction_date_valid(const Date &date) {
 	if (number_of_transactions == 0) {
 		return true;
@@ -106,8 +163,12 @@ bool Account::is_transaction_date_valid(const Date &date) {
 
 	return date >= latest_transaction_date;
 }
-
-
+/**
+ * Returns the latest transaction date
+ *
+ * @param	N/A
+ * @return Date* The latest transaction's date
+ */
 Date* Account::get_latest_transaction_date() const{
 	if (number_of_transactions == 0) {
 		return NULL;
@@ -118,15 +179,36 @@ Date* Account::get_latest_transaction_date() const{
 	return new Date(date.Day(), date.Month(), date.Year());
 }
 
-
+/**
+ * The interface for the add_interest method that will be implemented by derived classes
+ *
+ * @param 	date	The date that the interest is added
+ * @return	N/A
+ */
 void Account::add_interest(const Date &date) {
 	// Method will be override by derived classes
 }
 
+/**
+ * The interface for the deposit method that will be implemented by derived classes
+ *
+ * @param	amount	The deposit amount
+ * @param 	date	The deposit's date
+ * @return	N/A
+ */
 void Account::deposit(double amount, const Date &date) {
 	// Method will be override by derived classes
 }
 
+
+
+/**
+ * The interface for the withdraw method that will be implemented by derived classes
+ *
+ * @param	amount	The amount that is withdrawn
+ * @param 	date	The withdrwal's date
+ * @return	N/A
+ */
 void Account::withdraw(const double amount, const Date &date) {
 	// Method will be override by derived classes
 }

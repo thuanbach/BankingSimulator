@@ -1,12 +1,12 @@
 /**
  *
- * @file Customer.cpp
+ * @file Customer.h
  * @author Thuan Bach
  * @date October 24, 2021
  *
- * This is used to store customers' information such as name, age, address, or phone number.
+ * This module is used to store customers' information such as name, age, address, or phone number.
  * There are 3 derived classes from the Customer class. Each kind of customer will have its own interest rates,
- * checking charges or overdraft penalty.
+ * checking charges or overdraft penalty
  *
  */
 #ifndef SRC_CUSTOMER_H_
@@ -91,7 +91,7 @@ public:
 	/**
 	 * Update the customer name
 	 *
-	 * @param int The customer name
+	 * @param string The customer name
 	 * @return N/A
 	 */
 	void set_name(string &name);
@@ -99,7 +99,7 @@ public:
 	/**
 	 * Update the customer address
 	 *
-	 * @param int The customer address
+	 * @param string The customer address
 	 * @return N/A
 	 */
 	void set_address(string &address);
@@ -136,7 +136,7 @@ public:
 	virtual float get_savings_interest() const = 0;
 
 	/**
-	 * Abstract function that returns the savings interest, will be implemented by derived classes
+	 * Abstract function that returns the checking interest, will be implemented by derived classes
 	 *
 	 * @return float	The checking interest for this Customer
 	 */
@@ -157,10 +157,20 @@ public:
 	virtual float get_overdraft_penalty() const = 0;
 
 protected:
+
+	/** Customer number */
 	int customer_number;
+
+	/** Customer name */
 	std::string name;
+
+	/** Customer address */
 	std::string address;
+
+	/** Customer age */
 	int age;
+
+	/**  Customer phone number */
 	std::string phone_number;
 
 };

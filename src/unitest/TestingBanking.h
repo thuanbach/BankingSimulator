@@ -1,9 +1,3 @@
-/*
- * TestingBanking.h
- *
- *  Created on: Oct 31, 2021
- *      Author: Thuan Bach
- */
 /**
  *
  * @file TestingBanking.h
@@ -17,7 +11,13 @@
 #define SRC_APP_TESTINGCONSOLEBANKING_H_
 
 
-void testConsoleBankingApp();
+/**
+ *	Test the functionalities implemented in Bank module.
+ *
+ *	@param N/A
+ *	@return N/A
+ */
+void testBankingApp();
 
 
 

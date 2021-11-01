@@ -102,7 +102,7 @@ unsigned int ConsoleBankingApp::get_user_input_as_age() {
  * @return An integer that the user inputs
  */
 
-double ConsoleBankingApp::get_user_input_as_number() {
+int ConsoleBankingApp::get_user_input_as_number() {
 	int number;
 
 	while (true) {
@@ -327,7 +327,8 @@ void ConsoleBankingApp::start_printing_account() {
 
 /**
  * Start user interaction for making a deposit for a account.
- * At the end, it will invoke the corresponding function to make a deposit for the account .
+ * At the end, it will invoke the corresponding function to make a deposit for the account.
+ *
  * @param N/A
  * @return N/A
  */
@@ -347,6 +348,14 @@ void ConsoleBankingApp::start_deposit() {
 
 }
 
+/**
+ * Start user interaction for making a withdrawal for a account.
+ * At the end, it will invoke the corresponding function to make a deposit for the account.
+ *
+ * @param N/A
+ * @return N/A
+ */
+
 void ConsoleBankingApp::start_widthdraw() {
 	cout << ENTER_ACCOUNT_NUMBER;
 	int account_number = get_user_input_as_number();
@@ -361,6 +370,14 @@ void ConsoleBankingApp::start_widthdraw() {
 	bank.make_withdrawal(account_number, amount, date);
 }
 
+
+/**
+ *  Start the console banking application that users can interact with
+ *
+ *  @param	N/A
+ *  @return N/A
+ *
+ */
 void ConsoleBankingApp::start_application() {
 
 	Account account;

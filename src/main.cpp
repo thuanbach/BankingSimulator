@@ -13,13 +13,13 @@
 #include <TestingBanking.h>
 #include "ConsoleBankingApp.h"
 
-// Define a Test mode used to run unit tests
+/** Define a Test mode used to run unit tests */
 const unsigned int TEST_MODE = 1;
 
-// Define a APP mode used to run the ConsoleBankingApp module
+/**  Define a APP mode used to run the ConsoleBankingApp module */
 const unsigned int APP_MODE = 2;
 
-// Define a running mode for the application.
+/**  Define a running mode for the application. */
 const unsigned int RUNNING_MODE = APP_MODE;
 
 
@@ -32,7 +32,7 @@ const unsigned int RUNNING_MODE = APP_MODE;
 int main() {
 
 	if (RUNNING_MODE == TEST_MODE) {
-		testConsoleBankingApp();
+		testBankingApp();
 	} else {
 		ConsoleBankingApp app;
 		app.start_application();
