@@ -1,8 +1,11 @@
-/*
- * TransactionType.h
+/**
  *
- *  Created on: Oct 24, 2021
- *      Author: Thuan Bach
+ * @file TransactionType.h
+ * @author Thuan Bach
+ * @date October 24, 2021
+ *
+ * The file defines constants for transaction types
+ *
  */
 
 #ifndef SRC_BANK_TRANSACTIONTYPE_H_

@@ -5,6 +5,8 @@
  * @date October 24, 2021
  *
  * This module store information regarding accounts such as account number, balance, etc.
+ * There are 2 kinds of accounts: Checking and Savings. Functionalities regarding withdrawal, deposit and interest for each kind of accounts are different.
+ * And they will be implemented in derived classes instead of Account class.
  *
  */
 

@@ -1,3 +1,12 @@
+/**
+ *
+ * @file TestingBanking.cpp
+ * @author Thuan Bach
+ * @date October 31, 2021
+ *
+ * The module functions as unit test of the Bank's functionalities.
+ * It is independent to ConsoleBankingApp that needs user's interaction through the console.
+ */
 #include "Senior.h"
 #include "Adult.h"
 #include "Student.h"

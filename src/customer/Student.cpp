@@ -1,10 +1,13 @@
-/*
- * Student.cpp
+/**
  *
- *  Created on: Oct 24, 2021
- *      Author: Thuan Bach
+ * @file Student.cpp
+ * @author Thuan Bach
+ * @date October 24, 2021
+ *
+ * The Student class extends from the Customer and contains its own configuration for interest rates,
+ * checking charges or overdraft penalty for this kind of the Customer.
+ *
  */
-
 #ifndef SRC_CUSTOMER_STUDENT_CPP_
 #define SRC_CUSTOMER_STUDENT_CPP_
 

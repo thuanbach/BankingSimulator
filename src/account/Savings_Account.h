@@ -5,7 +5,7 @@
  * @date October 20, 2021
  *
  * This class extends from the Account to implement functionalities for a savings account.
- * Functionalities for each kind of accounts are different.
+ *
  *
  */
 #ifndef SRC_SAVINGS_ACCOUNT_H_

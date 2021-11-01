@@ -1,10 +1,13 @@
-/*
- * Adult.cpp
+/**
  *
- *  Created on: Oct 24, 2021
- *      Author: Thuan Bach
+ * @file Adult.cpp
+ * @author Thuan Bach
+ * @date October 24, 2021
+ *
+ * The Adult class extends from the Customer and contains its own configuration for interest rates,
+ * checking charges or overdraft penalty for this kind of the Customer.
+ *
  */
-
 
 #include "Adult.h"
 

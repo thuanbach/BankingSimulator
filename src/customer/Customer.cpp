@@ -1,8 +1,13 @@
-/*
- * Customer.cpp
+/**
  *
- *  Created on: Oct 24, 2021
- *      Author: Thuan Bach
+ * @file Customer.cpp
+ * @author Thuan Bach
+ * @date October 24, 2021
+ *
+ * This module is used to store customers' information such as name, age, address, or phone number.
+ * There are 3 derived classes from the Customer class. Each kind of customer will have its own interest rates,
+ * checking charges or overdraft penalty
+ *
  */
 #include <iostream>
 #include "Customer.h"

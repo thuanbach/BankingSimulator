@@ -4,27 +4,30 @@
  * @author Thuan Bach
  * @date October 20, 2021
  *
- * The main function where the ConsoleBankingApp starts execution.
- * There is also a TEST mode to support test functionalities of Bank class.
+ * The main function of the application where the ConsoleBankingApp starts execution.
+ * There is also a TEST mode to support unit tests of Bank class.
  *
  */
 
 
+#include <TestingBanking.h>
 #include "ConsoleBankingApp.h"
-#include "TestingConsoleBanking.h"
 
+// Define a Test mode used to run unit tests
 const unsigned int TEST_MODE = 1;
+
+// Define a APP mode used to run the ConsoleBankingApp module
 const unsigned int APP_MODE = 2;
 
-// Change to TEST_MODE to run tests for Bank class.
+// Define a running mode for the application.
 const unsigned int RUNNING_MODE = APP_MODE;
 
 
 /**
- * The main function to start the application
+ * The main function of the application where the ConsoleBankingApp starts execution
  *
  * @param  N/A
- * @return 0. Returns 0 if the application shut down correctly
+ * @return Returns 0 if the application shut down correctly
  */
 int main() {
 

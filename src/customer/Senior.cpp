@@ -1,10 +1,13 @@
-/*
- * Senior.cpp
+/**
  *
- *  Created on: Oct 24, 2021
- *      Author: Thuan Bach
+ * @file Senior.cpp
+ * @author Thuan Bach
+ * @date October 24, 2021
+ *
+ * The Senior class extends from the Customer and contains its own configuration for interest rates,
+ * checking charges or overdraft penalty for this kind of the Customer.
+ *
  */
-
 #include "Senior.h"
 
 string Senior::get_type_of_customer() const{

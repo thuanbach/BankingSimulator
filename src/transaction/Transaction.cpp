@@ -1,10 +1,12 @@
-/*
- * Transaction.cpp
+/**
  *
- *  Created on: Oct 23, 2021
- *      Author: Thuan Bach
+ * @file Transaction.cpp
+ * @author Thuan Bach
+ * @date October 23, 2021
+ *
+ * The class holds information of a transaction executed such as transaction's date , the type of the transaction, the amount, and the balance after the transaction
+ *
  */
-
 #include <iostream>
 #include <iomanip>
 #include "Transaction.h"

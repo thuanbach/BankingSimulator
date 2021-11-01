@@ -4,10 +4,9 @@
  * @author Thuan Bach
  * @date October 26, 2021
  *
- * The main module of the application where users will interact with.
+ * The main module of the application where users will interact with through the Console.
  * It is responsible for receiving users' input and invoke corresponding functionalities
- * of Bank class such as adding an account, make deposit, make withdrawal, or query accounts
- *
+ * of Bank class such as adding an account, make deposit, make withdrawal, or query accounts.
  *
  */
 
@@ -24,12 +23,20 @@
 #include "Transaction.h"
 
 const char BLANK_CHARACTER = ' ';
+
 const string ENTER_ACCOUNT_NUMBER = "Enter Account Number>";
+
 const string ENTER_AMOUNT = "Enter The Amount>";
+
 const string ENTER_DATE = "Enter the date yyyy-mm-dd>";
 
 const long STREAM_SIZE_LIMIT = std::numeric_limits<std::streamsize>::max();
 
+/**
+ * Parse users' input from the Console, and check the data before return it as a string object
+ *
+ * @return A nonempty string object from users' input.
+ */
 string ConsoleBankingApp::get_user_input_as_string() {
 	string user_input;
 
@@ -37,7 +44,8 @@ string ConsoleBankingApp::get_user_input_as_string() {
 		getline(cin, user_input);
 
 		size_t start = user_input.find_first_not_of(" \n\r\t");
-		user_input = (start == std::string::npos) ? "" : user_input.substr(start);
+		user_input =
+				(start == std::string::npos) ? "" : user_input.substr(start);
 
 		if (user_input.length() == 0) {
 			cout << "ERROR: data is empty. Please input again" << endl;
@@ -47,12 +55,17 @@ string ConsoleBankingApp::get_user_input_as_string() {
 
 		break;
 
-	} while(true);
-
+	} while (true);
 
 	return user_input;
 }
 
+/**
+ * Parse users' input from the Console for the age, and check the data before return it as a integer value.
+ * This can be enhanced in the future to check age validation if required.
+ *
+ * @return An integer presents a customer's age.
+ */
 unsigned int ConsoleBankingApp::get_user_input_as_age() {
 	unsigned int age = 0;
 
@@ -70,7 +83,7 @@ unsigned int ConsoleBankingApp::get_user_input_as_age() {
 
 		cin.ignore(STREAM_SIZE_LIMIT, '\n');
 
-		if(age <=0){
+		if (age <= 0) {
 			cout << "ERROR: Incorrect age. Please input again." << endl;
 			cout << ">";
 			continue;
@@ -81,6 +94,13 @@ unsigned int ConsoleBankingApp::get_user_input_as_age() {
 
 	return age;
 }
+
+/**
+ * Parse users' input from the Console, and check the data before return it as a integer value.
+ * This can be used for the case handling user's input for account number.
+ *
+ * @return An integer that the user inputs
+ */
 
 double ConsoleBankingApp::get_user_input_as_number() {
 	int number;
@@ -106,6 +126,12 @@ double ConsoleBankingApp::get_user_input_as_number() {
 	return number;
 }
 
+/**
+ * Parse users' input from the Console for the amount, and check the data before return it as a double value.
+ *
+ * @return A double that the user inputs
+ */
+
 double ConsoleBankingApp::get_user_input_as_amount() {
 	double amount;
 
@@ -129,6 +155,12 @@ double ConsoleBankingApp::get_user_input_as_amount() {
 
 	return amount;
 }
+
+/**
+ * Parse users' input from the Console for the date, and check the data before return it as a Date object.
+ *
+ * @return A Date object that the user inputs
+ */
 
 Date ConsoleBankingApp::get_user_input_as_date() {
 
@@ -157,6 +189,14 @@ Date ConsoleBankingApp::get_user_input_as_date() {
 	return date;
 }
 
+/**
+ * Parse users' input from the Console for a choice selection, and check the data before return.
+ *
+ * @param min The minimum value of the selection
+ * @param max The maximum value of the selection
+ *
+ * @return A integer presents user's selection for options.
+ */
 int ConsoleBankingApp::get_user_choice(int min, int max) {
 	int x = 0;
 
@@ -185,6 +225,13 @@ int ConsoleBankingApp::get_user_choice(int min, int max) {
 	return x;
 }
 
+/**
+ * Start user interaction for adding a account including receiving users' input from the Console.
+ * At the end, it will invoke the corresponding function to add an account to the Bank.
+ *
+ * @param N/A
+ * @return N/A
+ */
 void ConsoleBankingApp::start_adding_account() {
 
 	string customer_name;
@@ -214,17 +261,17 @@ void ConsoleBankingApp::start_adding_account() {
 
 	Customer *customer;
 	switch (type_of_customer) {
-		case 0:
-			customer = new Senior(customer_name, customer_address, customer_age,
-					customer_phone);
-			break;
-		case 1:
-			customer = new Adult(customer_name, customer_address, customer_age,
-					customer_phone);
-			break;
-		default:
-			customer = new Student(customer_name, customer_address, customer_age,
-					customer_phone);
+	case 0:
+		customer = new Senior(customer_name, customer_address, customer_age,
+				customer_phone);
+		break;
+	case 1:
+		customer = new Adult(customer_name, customer_address, customer_age,
+				customer_phone);
+		break;
+	default:
+		customer = new Student(customer_name, customer_address, customer_age,
+				customer_phone);
 
 	}
 
@@ -254,6 +301,13 @@ void ConsoleBankingApp::start_adding_account() {
 	bank.add_account(*account);
 }
 
+/**
+ * Start user interaction for querying a account.
+ * It receives a account number from user's input and print the account's information to the console if found.
+ *
+ * @param N/A
+ * @return N/A
+ */
 void ConsoleBankingApp::start_printing_account() {
 
 	cout << ENTER_ACCOUNT_NUMBER;
@@ -270,6 +324,13 @@ void ConsoleBankingApp::start_printing_account() {
 	}
 }
 
+
+/**
+ * Start user interaction for making a deposit for a account.
+ * At the end, it will invoke the corresponding function to make a deposit for the account .
+ * @param N/A
+ * @return N/A
+ */
 void ConsoleBankingApp::start_deposit() {
 
 	cout << ENTER_ACCOUNT_NUMBER;
@@ -317,25 +378,25 @@ void ConsoleBankingApp::start_application() {
 		transaction_type = get_user_choice(0, 4);
 
 		switch (transaction_type) {
-			case 0:
-				start_adding_account();
-				break;
-			case 1:
-				start_deposit();
-				break;
-			case 2:
-				start_widthdraw();
-				break;
-			case 3:
-				start_printing_account();
-				break;
-			case 4:
-				exit = true;
-				cout << "Application shut down";
-				break;
-			default:
-				break;
-			}
+		case 0:
+			start_adding_account();
+			break;
+		case 1:
+			start_deposit();
+			break;
+		case 2:
+			start_widthdraw();
+			break;
+		case 3:
+			start_printing_account();
+			break;
+		case 4:
+			exit = true;
+			cout << "Application shut down";
+			break;
+		default:
+			break;
+		}
 
 	} while (!exit);
 }
