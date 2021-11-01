@@ -1,0 +1,46 @@
+\hypertarget{_student_8h_source}{}\doxysection{Student.\+h}
+\label{_student_8h_source}\index{src/customer/Student.h@{src/customer/Student.h}}
+\mbox{\hyperlink{_student_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00011}00011 \textcolor{preprocessor}{\#ifndef SRC\_STUDENT\_H\_}}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00012}00012 \textcolor{preprocessor}{\#define SRC\_STUDENT\_H\_}}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00014}00014 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_customer_8h}{Customer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00016}\mbox{\hyperlink{class_student}{00016}} \textcolor{keyword}{class }\mbox{\hyperlink{class_student}{Student}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_customer}{Customer}} \{}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00017}00017 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00026}\mbox{\hyperlink{class_student_a5dc0b36ff0c08ad3d330c6a5de11f66b}{00026}}     \mbox{\hyperlink{class_student_a5dc0b36ff0c08ad3d330c6a5de11f66b}{Student}}(\textcolor{keywordtype}{string} \mbox{\hyperlink{class_customer_a6e6fc6e4c2e23085849bb544aa68a77e}{name}}, \textcolor{keywordtype}{string} \mbox{\hyperlink{class_customer_a3a180b064d559c1623dcc4f6fd972c7e}{address}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{class_customer_a286957f31f5dfc18dbf5acf3f3ec554a}{age}}, \textcolor{keywordtype}{string} \mbox{\hyperlink{class_customer_a9eaf67ecbfa45ac3f9ab3ca69007ba46}{phone\_number}}) :}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00027}00027                 \mbox{\hyperlink{class_customer}{Customer}}(\mbox{\hyperlink{class_customer_a6e6fc6e4c2e23085849bb544aa68a77e}{name}}, \mbox{\hyperlink{class_customer_a3a180b064d559c1623dcc4f6fd972c7e}{address}}, \mbox{\hyperlink{class_customer_a286957f31f5dfc18dbf5acf3f3ec554a}{age}}, \mbox{\hyperlink{class_customer_a9eaf67ecbfa45ac3f9ab3ca69007ba46}{phone\_number}})\{}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00028}00028     \}}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00035}00035     \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_student_a58add21df6cb0494c8aa94fa7a8b3bf5}{get\_savings\_interest}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00043}00043     \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_student_a53bbe56accb927d890bebb28d12cfe27}{get\_checking\_interest}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00050}00050     \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_student_abed28fd37f2d1418c7b97f16b7e484b6}{get\_checking\_charge}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00057}00057     \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_student_aae83310ff86e521f04e7cd86c81ccba2}{get\_overdraft\_penalty}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00064}00064     \textcolor{keyword}{virtual} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_student_a4755ce1a433c9d766dcde2770f38a550}{get\_type\_of\_customer}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00067}00067 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00068}00068         \textcolor{comment}{/* Define a constant for savings interest of Student customer*/}}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00069}00069      \textcolor{keyword}{const} \textcolor{keywordtype}{float} SAVINGS\_INTEREST = 0.05;}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00071}00071      \textcolor{comment}{/* Define a constant for checking interest of Student customer*/}}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00072}00072      \textcolor{keyword}{const} \textcolor{keywordtype}{float} CHECK\_INTEREST = 0.01;}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00074}00074      \textcolor{comment}{/* Define a constant for checking charge of Student customer*/}}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00075}00075      \textcolor{keyword}{const} \textcolor{keywordtype}{float} CHECK\_CHARGE = 0.02;}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00077}00077      \textcolor{comment}{/* Define a constant for overdraft penalty of Student customer*/}}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00078}00078      \textcolor{keyword}{const} \textcolor{keywordtype}{float} OVERDRAFT\_PENALTY = 30.00;}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00079}00079 \};}
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_student_8h_source_l00081}00081 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SRC\_STUDENT\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

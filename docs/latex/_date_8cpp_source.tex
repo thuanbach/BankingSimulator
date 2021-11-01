@@ -1,0 +1,315 @@
+\hypertarget{_date_8cpp_source}{}\doxysection{Date.\+cpp}
+\label{_date_8cpp_source}\index{src/date/Date.cpp@{src/date/Date.cpp}}
+\mbox{\hyperlink{_date_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <ostream>}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <istream>}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00007}00007 \textcolor{comment}{// \$Id: Date.C,v 1.2 2002/10/18 05:56:15 tknarr Exp \$}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00008}00008 \textcolor{comment}{// Copyright (C) 2000, 2002}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00009}00009 \textcolor{comment}{// Todd T. Knarr <tknarr@silverglass.org>}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00011}00011 \textcolor{comment}{// This program is free software; you can redistribute it and/or modify}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00012}00012 \textcolor{comment}{// it under the terms of the GNU General Public License as published by}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00013}00013 \textcolor{comment}{// the Free Software Foundation; either version 2 of the License, or}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00014}00014 \textcolor{comment}{// (at your option) any later version.}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00016}00016 \textcolor{comment}{// This program is distributed in the hope that it will be useful,}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00017}00017 \textcolor{comment}{// but WITHOUT ANY WARRANTY; without even the implied warranty of}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00018}00018 \textcolor{comment}{// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00019}00019 \textcolor{comment}{// GNU General Public License for more details.}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00021}00021 \textcolor{comment}{// You should have received a copy of the GNU General Public License}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00022}00022 \textcolor{comment}{// along with this program; if not, write to the Free Software}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00023}00023 \textcolor{comment}{// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-\/1307  USA}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00025}00025 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00026}00026 \textcolor{comment}{// Classname      : Date}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00027}00027 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00028}00028 \textcolor{comment}{// Author         : Todd Knarr}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00029}00029 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00030}00030 \textcolor{comment}{// Creation Date  : 29 Nov 1995}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00031}00031 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00032}00032 \textcolor{comment}{// Superclasses   : none}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00033}00033 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00034}00034 \textcolor{comment}{// Subclasses     : none}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00035}00035 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00036}00036 \textcolor{comment}{// Required files : Date.h}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00037}00037 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00038}00038 \textcolor{comment}{// Description    :}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00039}00039 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00040}00040 \textcolor{comment}{// Provides a Date class which represents dates as}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00041}00041 \textcolor{comment}{// Julian day numbers ( days since 1 Jan 4713 BC ).}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00042}00042 \textcolor{comment}{// This class can handle all dates from  1 Jan 4713BC to 31 Dec 4999AD.}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00043}00043 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00044}00044 \textcolor{comment}{// Note: Years AD are positive, years BC are negative. There is}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00045}00045 \textcolor{comment}{// no year 0AD, it goes from 1BC to 1AD. A year of 0 will be treated}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00046}00046 \textcolor{comment}{// as 1BC. No attempt is made to validate ranges. Physical errors}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00047}00047 \textcolor{comment}{// will not result from insane day-\/month combinations like the 87th}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00048}00048 \textcolor{comment}{// day of the 45th month, but the results will obviously not make}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00049}00049 \textcolor{comment}{// much sense.}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00050}00050 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00051}00051 \textcolor{comment}{// Date conversion routines  by Eric bergman-\/Terrell, Computer Language,}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00052}00052 \textcolor{comment}{//     Dec 1990.}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00053}00053 \textcolor{comment}{// Alternate method by David Burki, CUJ Feb 1993.}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00054}00054 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00055}00055 \textcolor{comment}{// To Do:}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00056}00056 \textcolor{comment}{// * Add << and >> operators for iostreams. They should probably output}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00057}00057 \textcolor{comment}{//   and input the string form.}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00058}00058 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00060}00060 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_date_8h}{Date.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00062}00062 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00064}00064 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00065}00065 \textcolor{comment}{//  Function      : YmdToJd}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00066}00066 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00067}00067 \textcolor{comment}{//  Author        : Todd Knarr}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00068}00068 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00069}00069 \textcolor{comment}{//  Creation date : 29 Nov 1995}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00070}00070 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00071}00071 \textcolor{comment}{//  Parameters    : int year, month, day}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00072}00072 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00073}00073 \textcolor{comment}{//  Return values : long julian day}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00074}00074 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00075}00075 \textcolor{comment}{//  Description   :}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00076}00076 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00077}00077 \textcolor{comment}{// Internal routine that does the physical conversion}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00078}00078 \textcolor{comment}{// from YMD form to Julian day number.}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00079}00079 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00080}00080 \textcolor{keywordtype}{long} Date::YmdToJd( \textcolor{keyword}{const} \textcolor{keywordtype}{int} iYear, \textcolor{keyword}{const} \textcolor{keywordtype}{int} iMonth, \textcolor{keyword}{const} \textcolor{keywordtype}{int} iDay )}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00081}00081 \{}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00082}00082     \textcolor{keywordtype}{long} jul\_day;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00084}00084 \textcolor{preprocessor}{\#ifndef JULDATE\_USE\_ALTERNATE\_METHOD}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00086}00086     \textcolor{keywordtype}{int} a,b;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00087}00087     \textcolor{keywordtype}{int} year = iYear, month = iMonth, day = iDay;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00088}00088     \textcolor{keywordtype}{float} year\_corr;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00090}00090     \textcolor{keywordflow}{if} ( year < 0 )}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00091}00091         year++;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00092}00092     year\_corr = ( year > 0 ? 0.0 : 0.75 );}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00093}00093     \textcolor{keywordflow}{if} ( month <= 2 )}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00094}00094     \{}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00095}00095         year-\/-\/;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00096}00096         month += 12;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00097}00097     \}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00098}00098     b = 0;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00099}00099     \textcolor{keywordflow}{if} ( year * 10000.0 + month * 100.0 + day >= 15821015.0 )}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00100}00100     \{}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00101}00101         a = year / 100;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00102}00102         b = 2 -\/ a + a / 4;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00103}00103     \}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00104}00104     jul\_day = (long) ( 365.25 * year -\/ year\_corr ) +}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00105}00105               (long) ( 30.6001 * ( month + 1 ) ) + day + 1720995L + b;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00107}00107 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00109}00109     \textcolor{keywordtype}{long} lmonth = (long) iMonth, lday = (\textcolor{keywordtype}{long}) iDay, lyear = (long) iYear;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00111}00111     \textcolor{comment}{// Adjust BC years}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00112}00112     \textcolor{keywordflow}{if} ( lyear < 0 )}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00113}00113         lyear++;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00115}00115     jul\_day = lday -\/ 32075L +}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00116}00116         1461L * ( lyear + 4800L + ( lmonth -\/ 14L ) / 12L ) / 4L +}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00117}00117         367L * ( lmonth -\/ 2L -\/ ( lmonth -\/ 14L ) / 12L * 12L ) / 12L -\/}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00118}00118         3L * ( ( lyear + 4900L + ( lmonth -\/ 14L ) / 12L ) / 100L ) / 4L;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00120}00120 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00122}00122     \textcolor{keywordflow}{return} jul\_day;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00123}00123 \}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00125}00125 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00126}00126 \textcolor{comment}{//  Function      : JdToYmd}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00127}00127 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00128}00128 \textcolor{comment}{//  Author        : Todd Knarr}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00129}00129 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00130}00130 \textcolor{comment}{//  Creation date : 29 Nov 1995}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00131}00131 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00132}00132 \textcolor{comment}{//  Parameters    : long julian day, pointers to int year, month, day}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00133}00133 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00134}00134 \textcolor{comment}{//  Return values : none}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00135}00135 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00136}00136 \textcolor{comment}{//  Description   :}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00137}00137 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00138}00138 \textcolor{comment}{// Internal routine that reverses the conversion, turning a Julian}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00139}00139 \textcolor{comment}{// day number into YMD values.}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00140}00140 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00141}00141 \textcolor{keywordtype}{void} Date::JdToYmd( \textcolor{keyword}{const} \textcolor{keywordtype}{long} lJD, \textcolor{keywordtype}{int} *piYear, \textcolor{keywordtype}{int} *piMonth, \textcolor{keywordtype}{int} *piDay )}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00142}00142 \{}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00143}00143 \textcolor{preprocessor}{\#ifndef JULDATE\_USE\_ALTERNATE\_METHOD}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00145}00145     \textcolor{keywordtype}{long} a, b, c, d, e, z, alpha;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00146}00146 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00147}00147     z = lJD;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00148}00148     \textcolor{keywordflow}{if} ( z < 2299161L )}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00149}00149         a = z;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00150}00150     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00151}00151     \{}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00152}00152         alpha = (long) ( ( z -\/ 1867216.25 ) / 36524.25 );}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00153}00153         a = z + 1 + alpha -\/ alpha / 4;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00154}00154     \}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00155}00155     b = a + 1524;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00156}00156     c = (long) ( ( b -\/ 122.1 ) / 365.25 );}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00157}00157     d = (long) ( 365.25 * c );}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00158}00158     e = (long) ( ( b -\/ d ) / 30.6001 );}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00159}00159     *piDay = (int) b -\/ d -\/ (\textcolor{keywordtype}{long}) ( 30.6001 * e );}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00160}00160     *piMonth = (int) ( e < 13.5 ) ? e -\/ 1 : e -\/ 13;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00161}00161     *piYear = (int) ( *piMonth > 2.5 ) ? ( c -\/ 4716 ) : c -\/ 4715;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00162}00162     \textcolor{keywordflow}{if} ( *piYear <= 0 )}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00163}00163         *piYear -\/= 1;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00164}00164 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00165}00165 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00166}00166 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00167}00167     \textcolor{keywordtype}{long} t1, t2, yr, mo;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00168}00168 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00169}00169     t1 = lJD + 68569L;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00170}00170     t2 = 4L * t1 / 146097L;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00171}00171     t1 = t1 -\/ ( 146097L * t2 + 3L ) / 4L;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00172}00172     yr = 4000L * ( t1 + 1L ) / 1461001L;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00173}00173     t1 = t1 -\/ 1461L * yr / 4L + 31L;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00174}00174     mo = 80L * t1 / 2447L;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00175}00175     *piDay = (int) ( t1 -\/ 2447L * mo / 80L );}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00176}00176     t1 = mo / 11L;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00177}00177     *piMonth = (int) ( mo + 2L -\/ 12L * t1 );}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00178}00178     *piYear = (int) ( 100L * ( t2 -\/ 49L ) + yr + t1 );}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00179}00179 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00180}00180     \textcolor{comment}{// Correct for BC years}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00181}00181     \textcolor{keywordflow}{if} ( *piYear <= 0 )}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00182}00182         *piYear -\/= 1;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00183}00183 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00184}00184 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00185}00185 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00186}00186     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00187}00187 \}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00188}00188 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00189}00189 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00190}\mbox{\hyperlink{class_date_aa157e74cfea37268728e6d410706a089}{00190}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_date_aa157e74cfea37268728e6d410706a089}{Date::DayOfYear}}( \textcolor{keywordtype}{void} )\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00191}00191 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00192}00192     \textcolor{keywordtype}{int} y, m, d;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00193}00193     \textcolor{keywordtype}{long} soy;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00194}00194 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00195}00195     JdToYmd( lJulianDay, \&y, \&m, \&d );}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00196}00196     soy = YmdToJd( y, 1, 1 );}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00197}00197     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int}) ( lJulianDay -\/ soy + 1 );}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00198}00198 \}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00199}00199 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00200}00200 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00201}00201 \textcolor{comment}{//  Function      : ToSysTime}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00202}00202 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00203}00203 \textcolor{comment}{//  Author        : Todd Knarr}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00204}00204 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00205}00205 \textcolor{comment}{//  Creation date : 29 Nov 1995}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00206}00206 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00207}00207 \textcolor{comment}{//  Parameters    : none}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00208}00208 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00209}00209 \textcolor{comment}{//  Return values : converted result}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00210}00210 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00211}00211 \textcolor{comment}{//  Description   :}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00212}00212 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00213}00213 \textcolor{comment}{// Converts the date to a time\_t value}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00214}00214 \textcolor{comment}{// representing midnight of that date.}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00215}00215 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00216}\mbox{\hyperlink{class_date_ae0d0aa29007b7b22de792a3ed570d937}{00216}} time\_t \mbox{\hyperlink{class_date_ae0d0aa29007b7b22de792a3ed570d937}{Date::ToSysTime}}( \textcolor{keywordtype}{void} )\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00217}00217 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00218}00218     \textcolor{keyword}{struct }tm tmRep;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00219}00219     \textcolor{keywordtype}{int} y, m, d;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00220}00220     time\_t t;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00221}00221     }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00222}00222     JdToYmd( lJulianDay, \&y, \&m, \&d );}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00223}00223     \textcolor{keywordflow}{if} ( y < 1970 )}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00224}00224     \{}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00225}00225         y = 70;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00226}00226         m = 1;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00227}00227         d = 1;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00228}00228     \}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00229}00229     tmRep.tm\_year = y -\/ 1900 ;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00230}00230     tmRep.tm\_mon = m-\/1;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00231}00231     tmRep.tm\_mday = d;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00232}00232     tmRep.tm\_hour = 0;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00233}00233     tmRep.tm\_min = 0;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00234}00234     tmRep.tm\_sec = 0;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00235}00235     tmRep.tm\_isdst = 0;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00236}00236     }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00237}00237     t = mktime( \&tmRep );}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00238}00238     \textcolor{keywordflow}{return} t;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00239}00239 \}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00240}00240 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00241}00241 \textcolor{comment}{// Function      : to\_string}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00242}00242 \textcolor{comment}{// Author        : Paul Wolfgang}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00243}00243 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00244}00244 \textcolor{comment}{// Creation date : 17 Feb 2006}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00245}00245 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00246}00246 \textcolor{comment}{// Parameters    : none}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00247}00247 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00248}00248 \textcolor{comment}{// Return value  : std::string}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00249}00249 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00250}00250 \textcolor{comment}{// Formats the Date into an ASCII representation.}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00251}00251 \textcolor{comment}{// This is in the form yyyy-\/mm-\/dd}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00252}00252 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00253}00253 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00254}\mbox{\hyperlink{class_date_adbb87be3df3f30ed207161733321be78}{00254}} std::string \mbox{\hyperlink{class_date_adbb87be3df3f30ed207161733321be78}{Date::to\_string}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00255}00255   std::ostringstream oss;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00256}00256   oss << std::setfill(\textcolor{charliteral}{'0'});}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00257}00257   oss << std::setw(4) << \mbox{\hyperlink{class_date_a9c571d4d45429dec74cd7d55b1c666a4}{Year}}() }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00258}00258       << \textcolor{charliteral}{'-\/'} << std::setw(2) << \mbox{\hyperlink{class_date_acd47c99905aa6725e1335a1753d39bc5}{Month}}()}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00259}00259       << \textcolor{charliteral}{'-\/'} << std::setw(2) << \mbox{\hyperlink{class_date_af4ab9ef70b810a5940e5afc00b97225c}{Day}}();}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00260}00260   \textcolor{keywordflow}{return} oss.str();}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00261}00261 \}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00262}00262 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00263}00263 \textcolor{comment}{// Function      : ostream operator<<}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00264}00264 \textcolor{comment}{// Author        : Paul Wolfgang}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00265}00265 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00266}00266 \textcolor{comment}{// Creation date : 17 Feb 2006}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00267}00267 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00268}00268 \textcolor{comment}{// Parameters    : none}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00269}00269 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00270}00270 \textcolor{comment}{// Return value  : ostream\&}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00271}00271 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00272}00272 \textcolor{comment}{// Formats the Date into an ASCII representation.}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00273}00273 \textcolor{comment}{// This is in the form yyyy-\/mm-\/dd and inserts it}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00274}00274 \textcolor{comment}{// into the ostream}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00275}00275 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00276}00276 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00277}\mbox{\hyperlink{class_date_a65ff0f219c6817d3b8b6e57724dc680a}{00277}} std::ostream\& \mbox{\hyperlink{_date_8cpp_ada4f8712609249fde898198589dc73e5}{operator<<}}(std::ostream\& out, \textcolor{keyword}{const} \mbox{\hyperlink{class_date}{Date}}\& date)}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00278}00278 \{ \textcolor{keywordflow}{return} out << date.\mbox{\hyperlink{class_date_adbb87be3df3f30ed207161733321be78}{to\_string}}(); \}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00279}00279 }
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00280}00280 \textcolor{comment}{// Function      : istream operator>>}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00281}00281 \textcolor{comment}{// Author        : Paul Wolfgang}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00282}00282 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00283}00283 \textcolor{comment}{// Creation date : 17 Feb 2006}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00284}00284 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00285}00285 \textcolor{comment}{// Parameters    : none}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00286}00286 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00287}00287 \textcolor{comment}{// Return value  : istream\&}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00288}00288 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00289}00289 \textcolor{comment}{// Extracts a date in the form yyyy-\/mm-\/dd from the istream}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00290}00290 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00291}00291 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00292}\mbox{\hyperlink{class_date_a399e807597adeffa59d2a6540c7362d9}{00292}} std::istream\& \mbox{\hyperlink{_date_8cpp_a4d60fae6ffff4d027e1e987183c4cdbc}{operator>>}}(std::istream\& in, \mbox{\hyperlink{class_date}{Date}}\& date)}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00293}00293 \{}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00294}00294   std::string date\_string;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00295}00295   in >> date\_string;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00296}00296   \textcolor{keywordtype}{size\_t} pos1 = date\_string.find(\textcolor{charliteral}{'-\/'});}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00297}00297   \textcolor{keywordtype}{size\_t} pos2 = date\_string.find(\textcolor{charliteral}{'-\/'}, pos1 + 1);}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00298}00298   \textcolor{keywordflow}{if} (pos1 == std::string::npos || pos2 == std::string::npos) \{}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00299}00299     in.clear(std::ios::failbit);}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00300}00300     \textcolor{keywordflow}{return} in;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00301}00301   \}}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00302}00302   std::string year\_string = date\_string.substr(0, pos1);}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00303}00303   std::string month\_string = date\_string.substr(pos1+1, pos2 -\/ pos1 -\/ 1);}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00304}00304   std::string day\_string = date\_string.substr(pos2 + 1);}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00305}00305   date = \mbox{\hyperlink{class_date}{Date}}(std::atoi(day\_string.c\_str()),}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00306}00306           std::atoi(month\_string.c\_str()),}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00307}00307           std::atoi(year\_string.c\_str()));}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00308}00308   \textcolor{keywordflow}{return} in;}
+\DoxyCodeLine{\Hypertarget{_date_8cpp_source_l00309}00309 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,167 @@
+\hypertarget{_testing_banking_8cpp}{}\doxysection{src/unitest/\+Testing\+Banking.cpp File Reference}
+\label{_testing_banking_8cpp}\index{src/unitest/TestingBanking.cpp@{src/unitest/TestingBanking.cpp}}
+{\ttfamily \#include \char`\"{}Senior.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Adult.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Student.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Checking\+\_\+\+Account.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Savings\+\_\+\+Account.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Date.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Transaction.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Bank.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_customer}{Customer}} $\ast$ \mbox{\hyperlink{_testing_banking_8cpp_a44758a91ec70802c56a37f87e7bb193a}{init\+Customer}} (unsigned int customer\+\_\+type)
+\item 
+void \mbox{\hyperlink{_testing_banking_8cpp_a801a0c5d7d789090c4feee0f097c2473}{test\+Banking\+With\+Account\+Type}} (unsigned int type\+\_\+of\+\_\+account)
+\item 
+void \mbox{\hyperlink{_testing_banking_8cpp_a066fa1dee6690040576168b333c54310}{test\+Checking\+Account}} ()
+\item 
+void \mbox{\hyperlink{_testing_banking_8cpp_acc82cfd9ac08887026cfbd2ec1bfb3ed}{test\+Savings\+Account}} ()
+\item 
+void \mbox{\hyperlink{_testing_banking_8cpp_a99fee3cc604a5a210632e338513b7af7}{test\+Console\+Banking\+App}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bank}{Bank}} \mbox{\hyperlink{_testing_banking_8cpp_abcc69e725e2d6f05619d1fdacb1cecaf}{bank}}
+\item 
+const unsigned int \mbox{\hyperlink{_testing_banking_8cpp_a7622d71ac80b078bf6fda131db5c76cc}{CHECKING\+\_\+\+ACCOUNT}} = 0
+\item 
+const unsigned int \mbox{\hyperlink{_testing_banking_8cpp_ace90f698c870755eb563ec8b1890c850}{SAVINGS\+\_\+\+ACCOUNT}} = 1
+\item 
+const unsigned int \mbox{\hyperlink{_testing_banking_8cpp_a987f863e6748a27f637818d234bd0f1b}{ADULT\+\_\+\+CUSTOMER}} = 0
+\item 
+const unsigned int \mbox{\hyperlink{_testing_banking_8cpp_ab1ae4a7d97f462bf55631e8eeaffae45}{SENIOR\+\_\+\+CUSTOMER}} = 1
+\item 
+const unsigned int \mbox{\hyperlink{_testing_banking_8cpp_a2b937f02b9348f1acd2a4a626d8e4a73}{STUDENT\+\_\+\+CUSTOMER}} = 2
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Thuan Bach 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+October 31, 2021
+\end{DoxyDate}
+The module functions as unit test of the \mbox{\hyperlink{class_bank}{Bank}}\textquotesingle{}s functionalities. It is independent to \mbox{\hyperlink{class_console_banking_app}{Console\+Banking\+App}} that needs user\textquotesingle{}s interaction through the console. 
+
+Definition in file \mbox{\hyperlink{_testing_banking_8cpp_source}{Testing\+Banking.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_testing_banking_8cpp_a44758a91ec70802c56a37f87e7bb193a}\label{_testing_banking_8cpp_a44758a91ec70802c56a37f87e7bb193a}} 
+\index{TestingBanking.cpp@{TestingBanking.cpp}!initCustomer@{initCustomer}}
+\index{initCustomer@{initCustomer}!TestingBanking.cpp@{TestingBanking.cpp}}
+\doxysubsubsection{\texorpdfstring{initCustomer()}{initCustomer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_customer}{Customer}} $\ast$ init\+Customer (\begin{DoxyParamCaption}\item[{unsigned int}]{customer\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_testing_banking_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{_testing_banking_8cpp_source}{Testing\+Banking.\+cpp}}.
+
+\mbox{\Hypertarget{_testing_banking_8cpp_a801a0c5d7d789090c4feee0f097c2473}\label{_testing_banking_8cpp_a801a0c5d7d789090c4feee0f097c2473}} 
+\index{TestingBanking.cpp@{TestingBanking.cpp}!testBankingWithAccountType@{testBankingWithAccountType}}
+\index{testBankingWithAccountType@{testBankingWithAccountType}!TestingBanking.cpp@{TestingBanking.cpp}}
+\doxysubsubsection{\texorpdfstring{testBankingWithAccountType()}{testBankingWithAccountType()}}
+{\footnotesize\ttfamily void test\+Banking\+With\+Account\+Type (\begin{DoxyParamCaption}\item[{unsigned int}]{type\+\_\+of\+\_\+account }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_testing_banking_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{_testing_banking_8cpp_source}{Testing\+Banking.\+cpp}}.
+
+\mbox{\Hypertarget{_testing_banking_8cpp_a066fa1dee6690040576168b333c54310}\label{_testing_banking_8cpp_a066fa1dee6690040576168b333c54310}} 
+\index{TestingBanking.cpp@{TestingBanking.cpp}!testCheckingAccount@{testCheckingAccount}}
+\index{testCheckingAccount@{testCheckingAccount}!TestingBanking.cpp@{TestingBanking.cpp}}
+\doxysubsubsection{\texorpdfstring{testCheckingAccount()}{testCheckingAccount()}}
+{\footnotesize\ttfamily void test\+Checking\+Account (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_testing_banking_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{_testing_banking_8cpp_source}{Testing\+Banking.\+cpp}}.
+
+\mbox{\Hypertarget{_testing_banking_8cpp_a99fee3cc604a5a210632e338513b7af7}\label{_testing_banking_8cpp_a99fee3cc604a5a210632e338513b7af7}} 
+\index{TestingBanking.cpp@{TestingBanking.cpp}!testConsoleBankingApp@{testConsoleBankingApp}}
+\index{testConsoleBankingApp@{testConsoleBankingApp}!TestingBanking.cpp@{TestingBanking.cpp}}
+\doxysubsubsection{\texorpdfstring{testConsoleBankingApp()}{testConsoleBankingApp()}}
+{\footnotesize\ttfamily void test\+Console\+Banking\+App (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_testing_banking_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{_testing_banking_8cpp_source}{Testing\+Banking.\+cpp}}.
+
+\mbox{\Hypertarget{_testing_banking_8cpp_acc82cfd9ac08887026cfbd2ec1bfb3ed}\label{_testing_banking_8cpp_acc82cfd9ac08887026cfbd2ec1bfb3ed}} 
+\index{TestingBanking.cpp@{TestingBanking.cpp}!testSavingsAccount@{testSavingsAccount}}
+\index{testSavingsAccount@{testSavingsAccount}!TestingBanking.cpp@{TestingBanking.cpp}}
+\doxysubsubsection{\texorpdfstring{testSavingsAccount()}{testSavingsAccount()}}
+{\footnotesize\ttfamily void test\+Savings\+Account (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_testing_banking_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{_testing_banking_8cpp_source}{Testing\+Banking.\+cpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_testing_banking_8cpp_a987f863e6748a27f637818d234bd0f1b}\label{_testing_banking_8cpp_a987f863e6748a27f637818d234bd0f1b}} 
+\index{TestingBanking.cpp@{TestingBanking.cpp}!ADULT\_CUSTOMER@{ADULT\_CUSTOMER}}
+\index{ADULT\_CUSTOMER@{ADULT\_CUSTOMER}!TestingBanking.cpp@{TestingBanking.cpp}}
+\doxysubsubsection{\texorpdfstring{ADULT\_CUSTOMER}{ADULT\_CUSTOMER}}
+{\footnotesize\ttfamily const unsigned int ADULT\+\_\+\+CUSTOMER = 0}
+
+
+
+Definition at line \mbox{\hyperlink{_testing_banking_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_testing_banking_8cpp_source}{Testing\+Banking.\+cpp}}.
+
+\mbox{\Hypertarget{_testing_banking_8cpp_abcc69e725e2d6f05619d1fdacb1cecaf}\label{_testing_banking_8cpp_abcc69e725e2d6f05619d1fdacb1cecaf}} 
+\index{TestingBanking.cpp@{TestingBanking.cpp}!bank@{bank}}
+\index{bank@{bank}!TestingBanking.cpp@{TestingBanking.cpp}}
+\doxysubsubsection{\texorpdfstring{bank}{bank}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bank}{Bank}} bank}
+
+
+
+Definition at line \mbox{\hyperlink{_testing_banking_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_testing_banking_8cpp_source}{Testing\+Banking.\+cpp}}.
+
+\mbox{\Hypertarget{_testing_banking_8cpp_a7622d71ac80b078bf6fda131db5c76cc}\label{_testing_banking_8cpp_a7622d71ac80b078bf6fda131db5c76cc}} 
+\index{TestingBanking.cpp@{TestingBanking.cpp}!CHECKING\_ACCOUNT@{CHECKING\_ACCOUNT}}
+\index{CHECKING\_ACCOUNT@{CHECKING\_ACCOUNT}!TestingBanking.cpp@{TestingBanking.cpp}}
+\doxysubsubsection{\texorpdfstring{CHECKING\_ACCOUNT}{CHECKING\_ACCOUNT}}
+{\footnotesize\ttfamily const unsigned int CHECKING\+\_\+\+ACCOUNT = 0}
+
+
+
+Definition at line \mbox{\hyperlink{_testing_banking_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_testing_banking_8cpp_source}{Testing\+Banking.\+cpp}}.
+
+\mbox{\Hypertarget{_testing_banking_8cpp_ace90f698c870755eb563ec8b1890c850}\label{_testing_banking_8cpp_ace90f698c870755eb563ec8b1890c850}} 
+\index{TestingBanking.cpp@{TestingBanking.cpp}!SAVINGS\_ACCOUNT@{SAVINGS\_ACCOUNT}}
+\index{SAVINGS\_ACCOUNT@{SAVINGS\_ACCOUNT}!TestingBanking.cpp@{TestingBanking.cpp}}
+\doxysubsubsection{\texorpdfstring{SAVINGS\_ACCOUNT}{SAVINGS\_ACCOUNT}}
+{\footnotesize\ttfamily const unsigned int SAVINGS\+\_\+\+ACCOUNT = 1}
+
+
+
+Definition at line \mbox{\hyperlink{_testing_banking_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{_testing_banking_8cpp_source}{Testing\+Banking.\+cpp}}.
+
+\mbox{\Hypertarget{_testing_banking_8cpp_ab1ae4a7d97f462bf55631e8eeaffae45}\label{_testing_banking_8cpp_ab1ae4a7d97f462bf55631e8eeaffae45}} 
+\index{TestingBanking.cpp@{TestingBanking.cpp}!SENIOR\_CUSTOMER@{SENIOR\_CUSTOMER}}
+\index{SENIOR\_CUSTOMER@{SENIOR\_CUSTOMER}!TestingBanking.cpp@{TestingBanking.cpp}}
+\doxysubsubsection{\texorpdfstring{SENIOR\_CUSTOMER}{SENIOR\_CUSTOMER}}
+{\footnotesize\ttfamily const unsigned int SENIOR\+\_\+\+CUSTOMER = 1}
+
+
+
+Definition at line \mbox{\hyperlink{_testing_banking_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_testing_banking_8cpp_source}{Testing\+Banking.\+cpp}}.
+
+\mbox{\Hypertarget{_testing_banking_8cpp_a2b937f02b9348f1acd2a4a626d8e4a73}\label{_testing_banking_8cpp_a2b937f02b9348f1acd2a4a626d8e4a73}} 
+\index{TestingBanking.cpp@{TestingBanking.cpp}!STUDENT\_CUSTOMER@{STUDENT\_CUSTOMER}}
+\index{STUDENT\_CUSTOMER@{STUDENT\_CUSTOMER}!TestingBanking.cpp@{TestingBanking.cpp}}
+\doxysubsubsection{\texorpdfstring{STUDENT\_CUSTOMER}{STUDENT\_CUSTOMER}}
+{\footnotesize\ttfamily const unsigned int STUDENT\+\_\+\+CUSTOMER = 2}
+
+
+
+Definition at line \mbox{\hyperlink{_testing_banking_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{_testing_banking_8cpp_source}{Testing\+Banking.\+cpp}}.
+

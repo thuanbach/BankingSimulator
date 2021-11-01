@@ -1,0 +1,107 @@
+\hypertarget{class_savings___account}{}\doxysection{Savings\+\_\+\+Account Class Reference}
+\label{class_savings___account}\index{Savings\_Account@{Savings\_Account}}
+
+
+{\ttfamily \#include $<$Savings\+\_\+\+Account.\+h$>$}
+
+Inheritance diagram for Savings\+\_\+\+Account\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_savings___account}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_savings___account_a47beb9929d5e69ac09c2ebfcbc8356d0}{Savings\+\_\+\+Account}} ()
+\item 
+\mbox{\hyperlink{class_savings___account_a91715a61344c2618bc98fa310360d896}{$\sim$\+Savings\+\_\+\+Account}} ()
+\item 
+virtual void \mbox{\hyperlink{class_savings___account_aa918aaf16b446962d08e7c7f3bfa5fde}{deposit}} (const double amount, const \mbox{\hyperlink{class_date}{Date}} \&date)
+\item 
+virtual void \mbox{\hyperlink{class_savings___account_a055f1a30d2a512fea3f094eebc831939}{withdraw}} (const double amount, const \mbox{\hyperlink{class_date}{Date}} \&date)
+\item 
+virtual void \mbox{\hyperlink{class_savings___account_a5285399967873836cd3bc8c25ace0adf}{add\+\_\+interest}} (const \mbox{\hyperlink{class_date}{Date}} \&date)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_savings___account_8h_source_l00018}{18}} of file \mbox{\hyperlink{_savings___account_8h_source}{Savings\+\_\+\+Account.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_savings___account_a47beb9929d5e69ac09c2ebfcbc8356d0}\label{class_savings___account_a47beb9929d5e69ac09c2ebfcbc8356d0}} 
+\index{Savings\_Account@{Savings\_Account}!Savings\_Account@{Savings\_Account}}
+\index{Savings\_Account@{Savings\_Account}!Savings\_Account@{Savings\_Account}}
+\doxysubsubsection{\texorpdfstring{Savings\_Account()}{Savings\_Account()}}
+{\footnotesize\ttfamily Savings\+\_\+\+Account\+::\+Savings\+\_\+\+Account (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_savings___account_8h_source_l00021}{21}} of file \mbox{\hyperlink{_savings___account_8h_source}{Savings\+\_\+\+Account.\+h}}.
+
+\mbox{\Hypertarget{class_savings___account_a91715a61344c2618bc98fa310360d896}\label{class_savings___account_a91715a61344c2618bc98fa310360d896}} 
+\index{Savings\_Account@{Savings\_Account}!````~Savings\_Account@{$\sim$Savings\_Account}}
+\index{````~Savings\_Account@{$\sim$Savings\_Account}!Savings\_Account@{Savings\_Account}}
+\doxysubsubsection{\texorpdfstring{$\sim$Savings\_Account()}{~Savings\_Account()}}
+{\footnotesize\ttfamily Savings\+\_\+\+Account\+::$\sim$\+Savings\+\_\+\+Account (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_savings___account_8h_source_l00023}{23}} of file \mbox{\hyperlink{_savings___account_8h_source}{Savings\+\_\+\+Account.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_savings___account_a5285399967873836cd3bc8c25ace0adf}\label{class_savings___account_a5285399967873836cd3bc8c25ace0adf}} 
+\index{Savings\_Account@{Savings\_Account}!add\_interest@{add\_interest}}
+\index{add\_interest@{add\_interest}!Savings\_Account@{Savings\_Account}}
+\doxysubsubsection{\texorpdfstring{add\_interest()}{add\_interest()}}
+{\footnotesize\ttfamily void Savings\+\_\+\+Account\+::add\+\_\+interest (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Add interest to a savings account The interest will be calculated by number of days 
+
+Reimplemented from \mbox{\hyperlink{class_account_a3bffe2933a671c69c3ea2c9b4126219d}{Account}}.
+
+
+
+Definition at line \mbox{\hyperlink{_savings___account_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{_savings___account_8cpp_source}{Savings\+\_\+\+Account.\+cpp}}.
+
+\mbox{\Hypertarget{class_savings___account_aa918aaf16b446962d08e7c7f3bfa5fde}\label{class_savings___account_aa918aaf16b446962d08e7c7f3bfa5fde}} 
+\index{Savings\_Account@{Savings\_Account}!deposit@{deposit}}
+\index{deposit@{deposit}!Savings\_Account@{Savings\_Account}}
+\doxysubsubsection{\texorpdfstring{deposit()}{deposit()}}
+{\footnotesize\ttfamily void Savings\+\_\+\+Account\+::deposit (\begin{DoxyParamCaption}\item[{const double}]{amount,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_account_a8bac9f1991546c2caa54e0a122e67b83}{Account}}.
+
+
+
+Definition at line \mbox{\hyperlink{_savings___account_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{_savings___account_8cpp_source}{Savings\+\_\+\+Account.\+cpp}}.
+
+\mbox{\Hypertarget{class_savings___account_a055f1a30d2a512fea3f094eebc831939}\label{class_savings___account_a055f1a30d2a512fea3f094eebc831939}} 
+\index{Savings\_Account@{Savings\_Account}!withdraw@{withdraw}}
+\index{withdraw@{withdraw}!Savings\_Account@{Savings\_Account}}
+\doxysubsubsection{\texorpdfstring{withdraw()}{withdraw()}}
+{\footnotesize\ttfamily void Savings\+\_\+\+Account\+::withdraw (\begin{DoxyParamCaption}\item[{const double}]{amount,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_account_a1212446d2047f7591c8775fdcecc29ba}{Account}}.
+
+
+
+Definition at line \mbox{\hyperlink{_savings___account_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{_savings___account_8cpp_source}{Savings\+\_\+\+Account.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/account/\mbox{\hyperlink{_savings___account_8h}{Savings\+\_\+\+Account.\+h}}\item 
+src/account/\mbox{\hyperlink{_savings___account_8cpp}{Savings\+\_\+\+Account.\+cpp}}\end{DoxyCompactItemize}

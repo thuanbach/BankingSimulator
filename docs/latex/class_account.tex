@@ -1,0 +1,247 @@
+\hypertarget{class_account}{}\doxysection{Account Class Reference}
+\label{class_account}\index{Account@{Account}}
+
+
+{\ttfamily \#include $<$Account.\+h$>$}
+
+Inheritance diagram for Account\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_account}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_account_a366660970b5eeb5c17436062327f1b14}{Account}} ()
+\item 
+virtual \mbox{\hyperlink{class_account_a25ff886382db8ce92963411082805658}{$\sim$\+Account}} ()
+\item 
+void \mbox{\hyperlink{class_account_acb53f72912a9d614f27863c4cdcefae7}{set\+\_\+customer}} (\mbox{\hyperlink{class_customer}{Customer}} \&customer)
+\item 
+\mbox{\hyperlink{class_customer}{Customer}} $\ast$ \mbox{\hyperlink{class_account_a3e1e0dc3d6b0ab42b4235b2f1bfdbc69}{get\+\_\+customer}} () const
+\item 
+void \mbox{\hyperlink{class_account_a81a0fd422dedd91f3535f85352fdf9da}{set\+\_\+balance}} (double new\+\_\+balance)
+\item 
+double \mbox{\hyperlink{class_account_a54b360c4f2f8026f3ae99479c3d93367}{get\+\_\+balance}} () const
+\item 
+void \mbox{\hyperlink{class_account_a7bb9f682ede6c7fc2f1a0875198f778a}{set\+\_\+account\+\_\+number}} (int account\+\_\+number)
+\item 
+int \mbox{\hyperlink{class_account_acf64571302efc5eedbf2300bc8060d9f}{get\+\_\+account\+\_\+number}} () const
+\item 
+string \mbox{\hyperlink{class_account_a030dce1fa5bdd33c0f1258a0f78e5037}{to\+\_\+string}} () const
+\item 
+virtual void \mbox{\hyperlink{class_account_a8bac9f1991546c2caa54e0a122e67b83}{deposit}} (const double amount, const \mbox{\hyperlink{class_date}{Date}} \&date)
+\item 
+virtual void \mbox{\hyperlink{class_account_a1212446d2047f7591c8775fdcecc29ba}{withdraw}} (const double amount, const \mbox{\hyperlink{class_date}{Date}} \&date)
+\item 
+virtual void \mbox{\hyperlink{class_account_a3bffe2933a671c69c3ea2c9b4126219d}{add\+\_\+interest}} (const \mbox{\hyperlink{class_date}{Date}} \&date)
+\item 
+bool \mbox{\hyperlink{class_account_a131c7abd414726837feb376386e8c159}{is\+\_\+transaction\+\_\+date\+\_\+valid}} (const \mbox{\hyperlink{class_date}{Date}} \&date)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_account_adcecfb37df2248545a2dcacab59e6393}{process\+\_\+transaction}} (const int transaction\+\_\+type, const double amount, const \mbox{\hyperlink{class_date}{Date}} \&date)
+\item 
+\mbox{\hyperlink{class_date}{Date}} $\ast$ \mbox{\hyperlink{class_account_a3633057338dc47ee89b2f31e9fb5860c}{get\+\_\+latest\+\_\+transaction\+\_\+date}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{class_account_ad07262805375dc71d380a06af34e1d73}{ANNUAL\+\_\+\+TERM\+\_\+\+IN\+\_\+\+DAYS}} = 365
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_account_8h_source_l00022}{22}} of file \mbox{\hyperlink{_account_8h_source}{Account.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_account_a366660970b5eeb5c17436062327f1b14}\label{class_account_a366660970b5eeb5c17436062327f1b14}} 
+\index{Account@{Account}!Account@{Account}}
+\index{Account@{Account}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{Account()}{Account()}}
+{\footnotesize\ttfamily Account\+::\+Account (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_account_8h_source_l00026}{26}} of file \mbox{\hyperlink{_account_8h_source}{Account.\+h}}.
+
+\mbox{\Hypertarget{class_account_a25ff886382db8ce92963411082805658}\label{class_account_a25ff886382db8ce92963411082805658}} 
+\index{Account@{Account}!````~Account@{$\sim$Account}}
+\index{````~Account@{$\sim$Account}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{$\sim$Account()}{~Account()}}
+{\footnotesize\ttfamily virtual Account\+::$\sim$\+Account (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{_account_8h_source_l00032}{32}} of file \mbox{\hyperlink{_account_8h_source}{Account.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_account_a3bffe2933a671c69c3ea2c9b4126219d}\label{class_account_a3bffe2933a671c69c3ea2c9b4126219d}} 
+\index{Account@{Account}!add\_interest@{add\_interest}}
+\index{add\_interest@{add\_interest}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{add\_interest()}{add\_interest()}}
+{\footnotesize\ttfamily void Account\+::add\+\_\+interest (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_checking___account_ab5b2eafdb8ae95933b87f22c9828dd58}{Checking\+\_\+\+Account}}, and \mbox{\hyperlink{class_savings___account_a5285399967873836cd3bc8c25ace0adf}{Savings\+\_\+\+Account}}.
+
+
+
+Definition at line \mbox{\hyperlink{_account_8cpp_source_l00122}{122}} of file \mbox{\hyperlink{_account_8cpp_source}{Account.\+cpp}}.
+
+\mbox{\Hypertarget{class_account_a8bac9f1991546c2caa54e0a122e67b83}\label{class_account_a8bac9f1991546c2caa54e0a122e67b83}} 
+\index{Account@{Account}!deposit@{deposit}}
+\index{deposit@{deposit}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{deposit()}{deposit()}}
+{\footnotesize\ttfamily void Account\+::deposit (\begin{DoxyParamCaption}\item[{const double}]{amount,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_checking___account_a828357a17a129cdb1b12b8c9fb149002}{Checking\+\_\+\+Account}}, and \mbox{\hyperlink{class_savings___account_aa918aaf16b446962d08e7c7f3bfa5fde}{Savings\+\_\+\+Account}}.
+
+
+
+Definition at line \mbox{\hyperlink{_account_8cpp_source_l00126}{126}} of file \mbox{\hyperlink{_account_8cpp_source}{Account.\+cpp}}.
+
+\mbox{\Hypertarget{class_account_acf64571302efc5eedbf2300bc8060d9f}\label{class_account_acf64571302efc5eedbf2300bc8060d9f}} 
+\index{Account@{Account}!get\_account\_number@{get\_account\_number}}
+\index{get\_account\_number@{get\_account\_number}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{get\_account\_number()}{get\_account\_number()}}
+{\footnotesize\ttfamily int Account\+::get\+\_\+account\+\_\+number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_account_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_account_8cpp_source}{Account.\+cpp}}.
+
+\mbox{\Hypertarget{class_account_a54b360c4f2f8026f3ae99479c3d93367}\label{class_account_a54b360c4f2f8026f3ae99479c3d93367}} 
+\index{Account@{Account}!get\_balance@{get\_balance}}
+\index{get\_balance@{get\_balance}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{get\_balance()}{get\_balance()}}
+{\footnotesize\ttfamily double Account\+::get\+\_\+balance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_account_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{_account_8cpp_source}{Account.\+cpp}}.
+
+\mbox{\Hypertarget{class_account_a3e1e0dc3d6b0ab42b4235b2f1bfdbc69}\label{class_account_a3e1e0dc3d6b0ab42b4235b2f1bfdbc69}} 
+\index{Account@{Account}!get\_customer@{get\_customer}}
+\index{get\_customer@{get\_customer}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{get\_customer()}{get\_customer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_customer}{Customer}} $\ast$ Account\+::get\+\_\+customer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_account_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{_account_8cpp_source}{Account.\+cpp}}.
+
+\mbox{\Hypertarget{class_account_a3633057338dc47ee89b2f31e9fb5860c}\label{class_account_a3633057338dc47ee89b2f31e9fb5860c}} 
+\index{Account@{Account}!get\_latest\_transaction\_date@{get\_latest\_transaction\_date}}
+\index{get\_latest\_transaction\_date@{get\_latest\_transaction\_date}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{get\_latest\_transaction\_date()}{get\_latest\_transaction\_date()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_date}{Date}} $\ast$ Account\+::get\+\_\+latest\+\_\+transaction\+\_\+date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_account_8cpp_source_l00111}{111}} of file \mbox{\hyperlink{_account_8cpp_source}{Account.\+cpp}}.
+
+\mbox{\Hypertarget{class_account_a131c7abd414726837feb376386e8c159}\label{class_account_a131c7abd414726837feb376386e8c159}} 
+\index{Account@{Account}!is\_transaction\_date\_valid@{is\_transaction\_date\_valid}}
+\index{is\_transaction\_date\_valid@{is\_transaction\_date\_valid}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{is\_transaction\_date\_valid()}{is\_transaction\_date\_valid()}}
+{\footnotesize\ttfamily bool Account\+::is\+\_\+transaction\+\_\+date\+\_\+valid (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{date }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_account_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{_account_8cpp_source}{Account.\+cpp}}.
+
+\mbox{\Hypertarget{class_account_adcecfb37df2248545a2dcacab59e6393}\label{class_account_adcecfb37df2248545a2dcacab59e6393}} 
+\index{Account@{Account}!process\_transaction@{process\_transaction}}
+\index{process\_transaction@{process\_transaction}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{process\_transaction()}{process\_transaction()}}
+{\footnotesize\ttfamily void Account\+::process\+\_\+transaction (\begin{DoxyParamCaption}\item[{const int}]{transaction\+\_\+type,  }\item[{const double}]{amount,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_account_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{_account_8cpp_source}{Account.\+cpp}}.
+
+\mbox{\Hypertarget{class_account_a7bb9f682ede6c7fc2f1a0875198f778a}\label{class_account_a7bb9f682ede6c7fc2f1a0875198f778a}} 
+\index{Account@{Account}!set\_account\_number@{set\_account\_number}}
+\index{set\_account\_number@{set\_account\_number}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{set\_account\_number()}{set\_account\_number()}}
+{\footnotesize\ttfamily void Account\+::set\+\_\+account\+\_\+number (\begin{DoxyParamCaption}\item[{int}]{account\+\_\+number }\end{DoxyParamCaption})}
+
+account\+\_\+number 
+
+Definition at line \mbox{\hyperlink{_account_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_account_8cpp_source}{Account.\+cpp}}.
+
+\mbox{\Hypertarget{class_account_a81a0fd422dedd91f3535f85352fdf9da}\label{class_account_a81a0fd422dedd91f3535f85352fdf9da}} 
+\index{Account@{Account}!set\_balance@{set\_balance}}
+\index{set\_balance@{set\_balance}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{set\_balance()}{set\_balance()}}
+{\footnotesize\ttfamily void Account\+::set\+\_\+balance (\begin{DoxyParamCaption}\item[{double}]{new\+\_\+balance }\end{DoxyParamCaption})}
+
+Balance 
+
+Definition at line \mbox{\hyperlink{_account_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{_account_8cpp_source}{Account.\+cpp}}.
+
+\mbox{\Hypertarget{class_account_acb53f72912a9d614f27863c4cdcefae7}\label{class_account_acb53f72912a9d614f27863c4cdcefae7}} 
+\index{Account@{Account}!set\_customer@{set\_customer}}
+\index{set\_customer@{set\_customer}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{set\_customer()}{set\_customer()}}
+{\footnotesize\ttfamily void Account\+::set\+\_\+customer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_customer}{Customer}} \&}]{customer }\end{DoxyParamCaption})}
+
+customer 
+
+Definition at line \mbox{\hyperlink{_account_8cpp_source_l00089}{89}} of file \mbox{\hyperlink{_account_8cpp_source}{Account.\+cpp}}.
+
+\mbox{\Hypertarget{class_account_a030dce1fa5bdd33c0f1258a0f78e5037}\label{class_account_a030dce1fa5bdd33c0f1258a0f78e5037}} 
+\index{Account@{Account}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
+{\footnotesize\ttfamily string Account\+::to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_account_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{_account_8cpp_source}{Account.\+cpp}}.
+
+\mbox{\Hypertarget{class_account_a1212446d2047f7591c8775fdcecc29ba}\label{class_account_a1212446d2047f7591c8775fdcecc29ba}} 
+\index{Account@{Account}!withdraw@{withdraw}}
+\index{withdraw@{withdraw}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{withdraw()}{withdraw()}}
+{\footnotesize\ttfamily void Account\+::withdraw (\begin{DoxyParamCaption}\item[{const double}]{amount,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_checking___account_af606034da1bcb528420bcfdf3e5fed72}{Checking\+\_\+\+Account}}, and \mbox{\hyperlink{class_savings___account_a055f1a30d2a512fea3f094eebc831939}{Savings\+\_\+\+Account}}.
+
+
+
+Definition at line \mbox{\hyperlink{_account_8cpp_source_l00130}{130}} of file \mbox{\hyperlink{_account_8cpp_source}{Account.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_account_ad07262805375dc71d380a06af34e1d73}\label{class_account_ad07262805375dc71d380a06af34e1d73}} 
+\index{Account@{Account}!ANNUAL\_TERM\_IN\_DAYS@{ANNUAL\_TERM\_IN\_DAYS}}
+\index{ANNUAL\_TERM\_IN\_DAYS@{ANNUAL\_TERM\_IN\_DAYS}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{ANNUAL\_TERM\_IN\_DAYS}{ANNUAL\_TERM\_IN\_DAYS}}
+{\footnotesize\ttfamily const int Account\+::\+ANNUAL\+\_\+\+TERM\+\_\+\+IN\+\_\+\+DAYS = 365\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_account_8h_source_l00077}{77}} of file \mbox{\hyperlink{_account_8h_source}{Account.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/account/\mbox{\hyperlink{_account_8h}{Account.\+h}}\item 
+src/account/\mbox{\hyperlink{_account_8cpp}{Account.\+cpp}}\end{DoxyCompactItemize}

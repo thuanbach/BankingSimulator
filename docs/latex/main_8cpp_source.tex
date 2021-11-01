@@ -1,0 +1,31 @@
+\hypertarget{main_8cpp_source}{}\doxysection{main.\+cpp}
+\label{main_8cpp_source}\index{src/main.cpp@{src/main.cpp}}
+\mbox{\hyperlink{main_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_testing_banking_8h}{TestingBanking.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_console_banking_app_8h}{ConsoleBankingApp.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016 \textcolor{comment}{// Define a Test mode used to run unit tests}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}\mbox{\hyperlink{main_8cpp_a021b8be5a15e52772373c45a2037f25e}{00017}} \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8cpp_a021b8be5a15e52772373c45a2037f25e}{TEST\_MODE}} = 1;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019 \textcolor{comment}{// Define a APP mode used to run the ConsoleBankingApp module}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}\mbox{\hyperlink{main_8cpp_a8f8562575e74f221d1a54ad38763d72b}{00020}} \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8cpp_a8f8562575e74f221d1a54ad38763d72b}{APP\_MODE}} = 2;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022 \textcolor{comment}{// Define a running mode for the application.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}\mbox{\hyperlink{main_8cpp_a8e99b9b0f45cb438b370462cdcf45e6e}{00023}} \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8cpp_a8e99b9b0f45cb438b370462cdcf45e6e}{RUNNING\_MODE}} = \mbox{\hyperlink{main_8cpp_a8f8562575e74f221d1a54ad38763d72b}{APP\_MODE}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}\mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00032}} \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034     \textcolor{keywordflow}{if} (\mbox{\hyperlink{main_8cpp_a8e99b9b0f45cb438b370462cdcf45e6e}{RUNNING\_MODE}} == \mbox{\hyperlink{main_8cpp_a021b8be5a15e52772373c45a2037f25e}{TEST\_MODE}}) \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035         \mbox{\hyperlink{_testing_banking_8cpp_a99fee3cc604a5a210632e338513b7af7}{testConsoleBankingApp}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037         \mbox{\hyperlink{class_console_banking_app}{ConsoleBankingApp}} app;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038         app.\mbox{\hyperlink{class_console_banking_app_af021543ba2f7ad4abf74da9f29505a7c}{start\_application}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042 \}}
+
+\end{DoxyCode}

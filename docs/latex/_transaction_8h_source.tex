@@ -1,0 +1,51 @@
+\hypertarget{_transaction_8h_source}{}\doxysection{Transaction.\+h}
+\label{_transaction_8h_source}\index{src/transaction/Transaction.h@{src/transaction/Transaction.h}}
+\mbox{\hyperlink{_transaction_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00010}00010 \textcolor{preprocessor}{\#ifndef SRC\_TRANSACTION\_H\_}}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00011}00011 \textcolor{preprocessor}{\#define SRC\_TRANSACTION\_H\_}}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00013}00013 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00014}00014 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_date_8h}{Date.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00015}00015 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_transaction_type_8h}{TransactionType.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00017}00017 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00019}\mbox{\hyperlink{class_transaction}{00019}} \textcolor{keyword}{class }\mbox{\hyperlink{class_transaction}{Transaction}} \{}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00021}00021 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00026}\mbox{\hyperlink{class_transaction_ab47005b855d38bc324bb79fd023baa13}{00026}}     \mbox{\hyperlink{class_transaction_ab47005b855d38bc324bb79fd023baa13}{Transaction}}(): transaction\_type(-\/1), balance(0), amount(0) \{}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00027}00027     \}}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00039}\mbox{\hyperlink{class_transaction_ac7cbe442c4c45cf142562b7e2d274a8a}{00039}}     \mbox{\hyperlink{class_transaction_ac7cbe442c4c45cf142562b7e2d274a8a}{Transaction}}(\textcolor{keywordtype}{int} transaction\_type, \textcolor{keywordtype}{double} amount, \textcolor{keywordtype}{double} balance, \textcolor{keyword}{const} \mbox{\hyperlink{class_date}{Date}}\& date) \{}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00041}00041         this-\/>transaction\_type = transaction\_type;}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00042}00042         this-\/>amount = amount;}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00043}00043         this-\/>date = date;}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00044}00044         this-\/>balance = balance;}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00052}00052     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_transaction_a5978e20e28d672827451456377c05a8b}{to\_string}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00059}00059     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_transaction_af50033255149ddad3d783d8a41b25061}{get\_balance}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00066}00066     \mbox{\hyperlink{class_date}{Date}} \mbox{\hyperlink{class_transaction_a0878ed3c7c1862a9ef0e8b893805cdff}{get\_transaction\_date}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00068}00068 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00070}00070     \textcolor{keywordtype}{int} transaction\_type;}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00072}00072     \textcolor{keywordtype}{double} balance;}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00074}00074     \textcolor{keywordtype}{double} amount;}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00076}00076     \mbox{\hyperlink{class_date}{Date}} date;}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00078}00078 \};}
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_transaction_8h_source_l00080}00080 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SRC\_TRANSACTION\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

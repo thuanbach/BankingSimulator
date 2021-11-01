@@ -1,0 +1,114 @@
+\hypertarget{class_transaction}{}\doxysection{Transaction Class Reference}
+\label{class_transaction}\index{Transaction@{Transaction}}
+
+
+{\ttfamily \#include $<$Transaction.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_transaction_ab47005b855d38bc324bb79fd023baa13}{Transaction}} ()
+\item 
+\mbox{\hyperlink{class_transaction_ac7cbe442c4c45cf142562b7e2d274a8a}{Transaction}} (int transaction\+\_\+type, double amount, double balance, const \mbox{\hyperlink{class_date}{Date}} \&date)
+\item 
+string \mbox{\hyperlink{class_transaction_a5978e20e28d672827451456377c05a8b}{to\+\_\+string}} () const
+\item 
+double \mbox{\hyperlink{class_transaction_af50033255149ddad3d783d8a41b25061}{get\+\_\+balance}} () const
+\item 
+\mbox{\hyperlink{class_date}{Date}} \mbox{\hyperlink{class_transaction_a0878ed3c7c1862a9ef0e8b893805cdff}{get\+\_\+transaction\+\_\+date}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_transaction_8h_source_l00019}{19}} of file \mbox{\hyperlink{_transaction_8h_source}{Transaction.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_transaction_ab47005b855d38bc324bb79fd023baa13}\label{class_transaction_ab47005b855d38bc324bb79fd023baa13}} 
+\index{Transaction@{Transaction}!Transaction@{Transaction}}
+\index{Transaction@{Transaction}!Transaction@{Transaction}}
+\doxysubsubsection{\texorpdfstring{Transaction()}{Transaction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Transaction\+::\+Transaction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor 
+
+Definition at line \mbox{\hyperlink{_transaction_8h_source_l00026}{26}} of file \mbox{\hyperlink{_transaction_8h_source}{Transaction.\+h}}.
+
+\mbox{\Hypertarget{class_transaction_ac7cbe442c4c45cf142562b7e2d274a8a}\label{class_transaction_ac7cbe442c4c45cf142562b7e2d274a8a}} 
+\index{Transaction@{Transaction}!Transaction@{Transaction}}
+\index{Transaction@{Transaction}!Transaction@{Transaction}}
+\doxysubsubsection{\texorpdfstring{Transaction()}{Transaction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Transaction\+::\+Transaction (\begin{DoxyParamCaption}\item[{int}]{transaction\+\_\+type,  }\item[{double}]{amount,  }\item[{double}]{balance,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor with params
+
+
+\begin{DoxyParams}{Parameters}
+{\em transaction\+\_\+type} & Type of transaction \\
+\hline
+{\em amount} & Amount of transaction \\
+\hline
+{\em balance} & The re balance \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_transaction_8h_source_l00039}{39}} of file \mbox{\hyperlink{_transaction_8h_source}{Transaction.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_transaction_af50033255149ddad3d783d8a41b25061}\label{class_transaction_af50033255149ddad3d783d8a41b25061}} 
+\index{Transaction@{Transaction}!get\_balance@{get\_balance}}
+\index{get\_balance@{get\_balance}!Transaction@{Transaction}}
+\doxysubsubsection{\texorpdfstring{get\_balance()}{get\_balance()}}
+{\footnotesize\ttfamily double Transaction\+::get\+\_\+balance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the balance that is hold by transaction
+
+\begin{DoxyReturn}{Returns}
+string The account balance at the end of the transaction 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_transaction_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{_transaction_8cpp_source}{Transaction.\+cpp}}.
+
+\mbox{\Hypertarget{class_transaction_a0878ed3c7c1862a9ef0e8b893805cdff}\label{class_transaction_a0878ed3c7c1862a9ef0e8b893805cdff}} 
+\index{Transaction@{Transaction}!get\_transaction\_date@{get\_transaction\_date}}
+\index{get\_transaction\_date@{get\_transaction\_date}!Transaction@{Transaction}}
+\doxysubsubsection{\texorpdfstring{get\_transaction\_date()}{get\_transaction\_date()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_date}{Date}} Transaction\+::get\+\_\+transaction\+\_\+date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the transaction date
+
+\begin{DoxyReturn}{Returns}
+date The transaction date 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_transaction_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{_transaction_8cpp_source}{Transaction.\+cpp}}.
+
+\mbox{\Hypertarget{class_transaction_a5978e20e28d672827451456377c05a8b}\label{class_transaction_a5978e20e28d672827451456377c05a8b}} 
+\index{Transaction@{Transaction}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!Transaction@{Transaction}}
+\doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
+{\footnotesize\ttfamily string Transaction\+::to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns a string object represents a transaction
+
+\begin{DoxyReturn}{Returns}
+A string object represents a transaction 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_transaction_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_transaction_8cpp_source}{Transaction.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/transaction/\mbox{\hyperlink{_transaction_8h}{Transaction.\+h}}\item 
+src/transaction/\mbox{\hyperlink{_transaction_8cpp}{Transaction.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,82 @@
+\hypertarget{_testing_banking_8cpp_source}{}\doxysection{Testing\+Banking.\+cpp}
+\label{_testing_banking_8cpp_source}\index{src/unitest/TestingBanking.cpp@{src/unitest/TestingBanking.cpp}}
+\mbox{\hyperlink{_testing_banking_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_senior_8h}{Senior.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_adult_8h}{Adult.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_student_8h}{Student.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_checking___account_8h}{Checking\_Account.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00014}00014 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_savings___account_8h}{Savings\_Account.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00015}00015 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_date_8h}{Date.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00016}00016 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_transaction_8h}{Transaction.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00017}00017 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_bank_8h}{Bank.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00019}\mbox{\hyperlink{_console_banking_app_8h_abcc69e725e2d6f05619d1fdacb1cecaf}{00019}} \mbox{\hyperlink{class_bank}{Bank}} \mbox{\hyperlink{_testing_banking_8cpp_abcc69e725e2d6f05619d1fdacb1cecaf}{bank}};}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00021}\mbox{\hyperlink{_testing_banking_8cpp_a7622d71ac80b078bf6fda131db5c76cc}{00021}} \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{_testing_banking_8cpp_a7622d71ac80b078bf6fda131db5c76cc}{CHECKING\_ACCOUNT}} = 0;}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00022}\mbox{\hyperlink{_testing_banking_8cpp_ace90f698c870755eb563ec8b1890c850}{00022}} \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{_testing_banking_8cpp_ace90f698c870755eb563ec8b1890c850}{SAVINGS\_ACCOUNT}} = 1;}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00023}\mbox{\hyperlink{_testing_banking_8cpp_a987f863e6748a27f637818d234bd0f1b}{00023}} \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{_testing_banking_8cpp_a987f863e6748a27f637818d234bd0f1b}{ADULT\_CUSTOMER}} = 0;}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00024}\mbox{\hyperlink{_testing_banking_8cpp_ab1ae4a7d97f462bf55631e8eeaffae45}{00024}} \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{_testing_banking_8cpp_ab1ae4a7d97f462bf55631e8eeaffae45}{SENIOR\_CUSTOMER}} = 1;}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00025}\mbox{\hyperlink{_testing_banking_8cpp_a2b937f02b9348f1acd2a4a626d8e4a73}{00025}} \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{_testing_banking_8cpp_a2b937f02b9348f1acd2a4a626d8e4a73}{STUDENT\_CUSTOMER}} = 2;}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00028}\mbox{\hyperlink{_testing_banking_8cpp_a44758a91ec70802c56a37f87e7bb193a}{00028}} \mbox{\hyperlink{class_customer}{Customer}}* \mbox{\hyperlink{_testing_banking_8cpp_a44758a91ec70802c56a37f87e7bb193a}{initCustomer}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} customer\_type) \{}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00029}00029     \mbox{\hyperlink{class_customer}{Customer}} *customer;}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00030}00030     \textcolor{keywordflow}{if} (customer\_type == \mbox{\hyperlink{_testing_banking_8cpp_a987f863e6748a27f637818d234bd0f1b}{ADULT\_CUSTOMER}}) \{}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00031}00031         customer = \textcolor{keyword}{new} \mbox{\hyperlink{class_adult}{Adult}}(\textcolor{stringliteral}{"{}Adult"{}}, \textcolor{stringliteral}{"{}Le DUC THO"{}}, 30, \textcolor{stringliteral}{"{}3434909"{}});}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00032}00032     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (customer\_type == \mbox{\hyperlink{_testing_banking_8cpp_ab1ae4a7d97f462bf55631e8eeaffae45}{SENIOR\_CUSTOMER}}) \{}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00033}00033         customer = \textcolor{keyword}{new} \mbox{\hyperlink{class_senior}{Senior}}(\textcolor{stringliteral}{"{}Senior"{}}, \textcolor{stringliteral}{"{}Le DUC THO"{}}, 25, \textcolor{stringliteral}{"{}45689989"{}});}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00034}00034     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00035}00035         customer = \textcolor{keyword}{new} \mbox{\hyperlink{class_student}{Student}}(\textcolor{stringliteral}{"{}Student"{}}, \textcolor{stringliteral}{"{}Le DUC THO"{}}, 20, \textcolor{stringliteral}{"{}34654677"{}});}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00036}00036     \}}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00038}00038     \textcolor{keywordflow}{return} customer;}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00039}00039 \}}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00041}\mbox{\hyperlink{_testing_banking_8cpp_a801a0c5d7d789090c4feee0f097c2473}{00041}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_testing_banking_8cpp_a801a0c5d7d789090c4feee0f097c2473}{testBankingWithAccountType}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type\_of\_account) \{}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00043}00043     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < 3; i++) \{}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00044}00044         \mbox{\hyperlink{class_customer}{Customer}} *customer = \mbox{\hyperlink{_testing_banking_8cpp_a44758a91ec70802c56a37f87e7bb193a}{initCustomer}}(i);}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00045}00045         \mbox{\hyperlink{class_account}{Account}} *account;}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00046}00046         \textcolor{keywordflow}{if} (type\_of\_account == 0) \{}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00047}00047             account = \textcolor{keyword}{new} \mbox{\hyperlink{class_checking___account}{Checking\_Account}}();}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00048}00048         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00049}00049             account = \textcolor{keyword}{new} \mbox{\hyperlink{class_savings___account}{Savings\_Account}}();}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00050}00050         \}}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00051}00051         account-\/>\mbox{\hyperlink{class_account_acb53f72912a9d614f27863c4cdcefae7}{set\_customer}}(*customer);}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00053}00053         \mbox{\hyperlink{_testing_banking_8cpp_abcc69e725e2d6f05619d1fdacb1cecaf}{bank}}.\mbox{\hyperlink{class_bank_af9b635ef51514cbe046737f804c51773}{add\_account}}(*account);}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00055}00055         \mbox{\hyperlink{class_date}{Date}} depositeDate(10, 10, 2018);}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00057}00057         \mbox{\hyperlink{_testing_banking_8cpp_abcc69e725e2d6f05619d1fdacb1cecaf}{bank}}.\mbox{\hyperlink{class_bank_ad8e04e6fd108f993fd35be0bd873de26}{make\_deposit}}(account-\/>\mbox{\hyperlink{class_account_acf64571302efc5eedbf2300bc8060d9f}{get\_account\_number}}(), 500, depositeDate);}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00059}00059         \mbox{\hyperlink{class_date}{Date}} withdrawDate(10, 10, 2020);}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00061}00061         \mbox{\hyperlink{_testing_banking_8cpp_abcc69e725e2d6f05619d1fdacb1cecaf}{bank}}.\mbox{\hyperlink{class_bank_a40e33bfaec1127eb202a5bcda626bfe9}{make\_withdrawal}}(account-\/>\mbox{\hyperlink{class_account_acf64571302efc5eedbf2300bc8060d9f}{get\_account\_number}}(), 100, withdrawDate);}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00063}00063         \mbox{\hyperlink{class_date}{Date}} withdrawDateWithOverdraft(10, 11, 2020);}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00065}00065         \mbox{\hyperlink{_testing_banking_8cpp_abcc69e725e2d6f05619d1fdacb1cecaf}{bank}}.\mbox{\hyperlink{class_bank_a40e33bfaec1127eb202a5bcda626bfe9}{make\_withdrawal}}(account-\/>\mbox{\hyperlink{class_account_acf64571302efc5eedbf2300bc8060d9f}{get\_account\_number}}(), 1000,}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00066}00066                 withdrawDateWithOverdraft);}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00068}00068         cout << \mbox{\hyperlink{_testing_banking_8cpp_abcc69e725e2d6f05619d1fdacb1cecaf}{bank}}.\mbox{\hyperlink{class_bank_adfa95df98f0079d0fc51fe20fe8c0c90}{get\_account}}(account-\/>\mbox{\hyperlink{class_account_acf64571302efc5eedbf2300bc8060d9f}{get\_account\_number}}())-\/>\mbox{\hyperlink{class_account_a030dce1fa5bdd33c0f1258a0f78e5037}{to\_string}}();}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00069}00069     \}}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00070}00070 \}}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00072}\mbox{\hyperlink{_testing_banking_8cpp_a066fa1dee6690040576168b333c54310}{00072}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_testing_banking_8cpp_a066fa1dee6690040576168b333c54310}{testCheckingAccount}}() \{}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00073}00073     \mbox{\hyperlink{_testing_banking_8cpp_a801a0c5d7d789090c4feee0f097c2473}{testBankingWithAccountType}}(\mbox{\hyperlink{_testing_banking_8cpp_a7622d71ac80b078bf6fda131db5c76cc}{CHECKING\_ACCOUNT}});}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00074}00074 \}}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00076}\mbox{\hyperlink{_testing_banking_8cpp_acc82cfd9ac08887026cfbd2ec1bfb3ed}{00076}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_testing_banking_8cpp_acc82cfd9ac08887026cfbd2ec1bfb3ed}{testSavingsAccount}}() \{}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00077}00077     \mbox{\hyperlink{_testing_banking_8cpp_a801a0c5d7d789090c4feee0f097c2473}{testBankingWithAccountType}}(\mbox{\hyperlink{_testing_banking_8cpp_ace90f698c870755eb563ec8b1890c850}{SAVINGS\_ACCOUNT}});}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00078}00078 \}}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00080}\mbox{\hyperlink{_testing_banking_8cpp_a99fee3cc604a5a210632e338513b7af7}{00080}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_testing_banking_8cpp_a99fee3cc604a5a210632e338513b7af7}{testConsoleBankingApp}}() \{}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00082}00082     \mbox{\hyperlink{_testing_banking_8cpp_a066fa1dee6690040576168b333c54310}{testCheckingAccount}}();}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00083}00083     \mbox{\hyperlink{_testing_banking_8cpp_acc82cfd9ac08887026cfbd2ec1bfb3ed}{testSavingsAccount}}();}
+\DoxyCodeLine{\Hypertarget{_testing_banking_8cpp_source_l00084}00084 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,70 @@
+\hypertarget{_checking___account_8cpp_source}{}\doxysection{Checking\+\_\+\+Account.\+cpp}
+\label{_checking___account_8cpp_source}\index{src/account/Checking\_Account.cpp@{src/account/Checking\_Account.cpp}}
+\mbox{\hyperlink{_checking___account_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_checking___account_8h}{Checking\_Account.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00014}00014 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_transaction_type_8h}{TransactionType.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00015}00015 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_transaction_8h}{Transaction.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00017}00017 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00019}00019 \textcolor{keywordtype}{int} Checking\_Account::calculate\_days\_from\_last\_transaction(\textcolor{keyword}{const} \mbox{\hyperlink{class_date}{Date}} \&date)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00021}00021     \mbox{\hyperlink{class_date}{Date}}* latest\_transaction\_date  = \mbox{\hyperlink{class_account_a3633057338dc47ee89b2f31e9fb5860c}{get\_latest\_transaction\_date}}();}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00023}00023     \textcolor{keywordflow}{if} ( latest\_transaction\_date == NULL)\{}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00024}00024         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00025}00025     \}}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00027}00027     \textcolor{keywordtype}{int} difference\_in\_days = -\/(*latest\_transaction\_date -\/ date);}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00029}00029     \textcolor{keywordflow}{return} difference\_in\_days;}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00030}00030 \}}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00033}\mbox{\hyperlink{class_checking___account_a828357a17a129cdb1b12b8c9fb149002}{00033}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_checking___account_a828357a17a129cdb1b12b8c9fb149002}{Checking\_Account::deposit}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} amount, \textcolor{keyword}{const} \mbox{\hyperlink{class_date}{Date}} \&date) \{}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00035}00035     \mbox{\hyperlink{class_account_adcecfb37df2248545a2dcacab59e6393}{process\_transaction}}(\mbox{\hyperlink{_transaction_type_8h_a3d363f883d500cb1a7b97f5d178bab3d}{DEPOSITE}}, amount, date);}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00036}00036 \}}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00038}\mbox{\hyperlink{class_checking___account_af606034da1bcb528420bcfdf3e5fed72}{00038}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_checking___account_af606034da1bcb528420bcfdf3e5fed72}{Checking\_Account::withdraw}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} amount, \textcolor{keyword}{const} \mbox{\hyperlink{class_date}{Date}} \&date) \{}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00040}00040     \textcolor{keywordtype}{bool} overdraft = amount > \mbox{\hyperlink{class_account_a54b360c4f2f8026f3ae99479c3d93367}{get\_balance}}();}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00042}00042     \mbox{\hyperlink{class_account_adcecfb37df2248545a2dcacab59e6393}{process\_transaction}}(\mbox{\hyperlink{_transaction_type_8h_a453e2862fec3115bef139dfe82af1af6}{WITHDRAW}}, amount, date);}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00044}00044     \textcolor{comment}{// If checking\_charge is empty, don't add transaction}}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00045}00045     \textcolor{keywordtype}{float} withdraw\_charge = \mbox{\hyperlink{class_account_a3e1e0dc3d6b0ab42b4235b2f1bfdbc69}{get\_customer}}()-\/>\mbox{\hyperlink{class_customer_a124266f1ebddc2ff004cb32c179decef}{get\_checking\_charge}}();}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00046}00046     \textcolor{keywordflow}{if} (withdraw\_charge > 0) \{}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00047}00047         \mbox{\hyperlink{class_account_adcecfb37df2248545a2dcacab59e6393}{process\_transaction}}(\mbox{\hyperlink{_transaction_type_8h_a28f046b14d8ed03da157777c562bac64}{CHKCHG}}, withdraw\_charge, date);}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00048}00048     \}}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00050}00050     \textcolor{keywordflow}{if} (overdraft) \{}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00051}00051         \mbox{\hyperlink{class_account_adcecfb37df2248545a2dcacab59e6393}{process\_transaction}}(\mbox{\hyperlink{_transaction_type_8h_af4aa5e3f304707985e0c2e8862f01d41}{OVERDRAFT}}, \mbox{\hyperlink{class_account_a3e1e0dc3d6b0ab42b4235b2f1bfdbc69}{get\_customer}}()-\/>get\_overdraft\_penalty(),}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00052}00052                 date);}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00053}00053     \}}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00055}00055 \}}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00057}\mbox{\hyperlink{class_checking___account_ab5b2eafdb8ae95933b87f22c9828dd58}{00057}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_checking___account_ab5b2eafdb8ae95933b87f22c9828dd58}{Checking\_Account::add\_interest}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_date}{Date}} \&date) \{}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00059}00059     \textcolor{keywordtype}{int} nr\_of\_days = calculate\_days\_from\_last\_transaction(date);}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00061}00061     \textcolor{comment}{// Don't calculate interest if balance is negative due to overdraft is charged}}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00062}00062     \textcolor{comment}{// OR number of days from the last transaction is 0}}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00063}00063     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_account_a54b360c4f2f8026f3ae99479c3d93367}{get\_balance}}() <= 0 || nr\_of\_days == 0) \{}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00064}00064         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00065}00065     \}}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00067}00067     \textcolor{comment}{// interest will be calculated daily}}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00068}00068     \textcolor{keywordtype}{double} interest\_per\_day = (double) \mbox{\hyperlink{class_account_a3e1e0dc3d6b0ab42b4235b2f1bfdbc69}{get\_customer}}()-\/>\mbox{\hyperlink{class_customer_aa25791df3470963ad65bac45e0ba618e}{get\_checking\_interest}}()}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00069}00069             / \mbox{\hyperlink{class_account_ad07262805375dc71d380a06af34e1d73}{ANNUAL\_TERM\_IN\_DAYS}};}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00071}00071     \textcolor{keywordtype}{double} interest\_amount = (interest\_per\_day * nr\_of\_days) * \mbox{\hyperlink{class_account_a54b360c4f2f8026f3ae99479c3d93367}{get\_balance}}();}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00073}00073     \mbox{\hyperlink{class_account_adcecfb37df2248545a2dcacab59e6393}{process\_transaction}}(\mbox{\hyperlink{_transaction_type_8h_a34f8e581ddcb8993b219d2ff55b38ddb}{INTEREST}}, interest\_amount, date);}
+\DoxyCodeLine{\Hypertarget{_checking___account_8cpp_source_l00074}00074 \}}
+
+\end{DoxyCode}

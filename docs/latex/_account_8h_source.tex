@@ -1,0 +1,81 @@
+\hypertarget{_account_8h_source}{}\doxysection{Account.\+h}
+\label{_account_8h_source}\index{src/account/Account.h@{src/account/Account.h}}
+\mbox{\hyperlink{_account_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00012}00012 \textcolor{preprocessor}{\#ifndef SRC\_ACCOUNT\_H\_}}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00013}00013 \textcolor{preprocessor}{\#define SRC\_ACCOUNT\_H\_}}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00015}00015 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00016}00016 \textcolor{preprocessor}{\#include "{}../customer/Customer.h"{}}}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00017}00017 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_transaction_type_8h}{TransactionType.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00018}00018 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_transaction_8h}{Transaction.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00020}00020 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00022}\mbox{\hyperlink{class_account}{00022}} \textcolor{keyword}{class }\mbox{\hyperlink{class_account}{Account}} \{}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00024}00024 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00026}\mbox{\hyperlink{class_account_a366660970b5eeb5c17436062327f1b14}{00026}}     \mbox{\hyperlink{class_account_a366660970b5eeb5c17436062327f1b14}{Account}}() :}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00027}00027             account\_number(-\/1), balance(0), customer(NULL), number\_of\_transactions(}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00028}00028                     0), transactions(}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00029}00029                     new \mbox{\hyperlink{class_transaction}{Transaction}}[MAXIMUM\_OF\_TRANSACTIONS\_PER\_ACC]) \{}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00030}00030     \}}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00032}\mbox{\hyperlink{class_account_a25ff886382db8ce92963411082805658}{00032}}     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_account_a25ff886382db8ce92963411082805658}{\string~Account}}() \{}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00033}00033     \}}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00039}00039     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_account_acb53f72912a9d614f27863c4cdcefae7}{set\_customer}}(\mbox{\hyperlink{class_customer}{Customer}} \&customer);}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00041}00041     \mbox{\hyperlink{class_customer}{Customer}}* \mbox{\hyperlink{class_account_a3e1e0dc3d6b0ab42b4235b2f1bfdbc69}{get\_customer}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00047}00047     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_account_a81a0fd422dedd91f3535f85352fdf9da}{set\_balance}}(\textcolor{keywordtype}{double} new\_balance);}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00049}00049     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_account_a54b360c4f2f8026f3ae99479c3d93367}{get\_balance}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00055}00055     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_account_a7bb9f682ede6c7fc2f1a0875198f778a}{set\_account\_number}}(\textcolor{keywordtype}{int} account\_number);}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00057}00057     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_account_acf64571302efc5eedbf2300bc8060d9f}{get\_account\_number}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00060}00060     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_account_a030dce1fa5bdd33c0f1258a0f78e5037}{to\_string}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00063}00063     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_account_a8bac9f1991546c2caa54e0a122e67b83}{deposit}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} amount, \textcolor{keyword}{const} \mbox{\hyperlink{class_date}{Date}} \&date);}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00065}00065     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_account_a1212446d2047f7591c8775fdcecc29ba}{withdraw}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} amount, \textcolor{keyword}{const} \mbox{\hyperlink{class_date}{Date}} \&date);}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00067}00067     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_account_a3bffe2933a671c69c3ea2c9b4126219d}{add\_interest}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_date}{Date}} \&date);}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00069}00069     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_account_a131c7abd414726837feb376386e8c159}{is\_transaction\_date\_valid}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_date}{Date}} \&date);}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00071}00071 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00074}00074     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_account_adcecfb37df2248545a2dcacab59e6393}{process\_transaction}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} transaction\_type, \textcolor{keyword}{const} \textcolor{keywordtype}{double} amount,}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00075}00075             \textcolor{keyword}{const} \mbox{\hyperlink{class_date}{Date}} \&date);}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00077}\mbox{\hyperlink{class_account_ad07262805375dc71d380a06af34e1d73}{00077}}     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_account_ad07262805375dc71d380a06af34e1d73}{ANNUAL\_TERM\_IN\_DAYS}} = 365;}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00079}00079     \mbox{\hyperlink{class_date}{Date}}* \mbox{\hyperlink{class_account_a3633057338dc47ee89b2f31e9fb5860c}{get\_latest\_transaction\_date}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00081}00081 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00083}00083     \textcolor{keywordtype}{int} account\_number;}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00085}00085     \textcolor{keywordtype}{double} balance;}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00087}00087     \mbox{\hyperlink{class_customer}{Customer}} *customer;}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00089}00089     \textcolor{keywordtype}{int} number\_of\_transactions;}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00091}00091     \mbox{\hyperlink{class_transaction}{Transaction}} *transactions;}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00094}00094     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} MAXIMUM\_OF\_TRANSACTIONS\_PER\_ACC = 1000;}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00095}00095 \};}
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{_account_8h_source_l00097}00097 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SRC\_ACCOUNT\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

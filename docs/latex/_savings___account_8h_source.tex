@@ -1,0 +1,37 @@
+\hypertarget{_savings___account_8h_source}{}\doxysection{Savings\+\_\+\+Account.\+h}
+\label{_savings___account_8h_source}\index{src/account/Savings\_Account.h@{src/account/Savings\_Account.h}}
+\mbox{\hyperlink{_savings___account_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00011}00011 \textcolor{preprocessor}{\#ifndef SRC\_SAVINGS\_ACCOUNT\_H\_}}
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00012}00012 \textcolor{preprocessor}{\#define SRC\_SAVINGS\_ACCOUNT\_H\_}}
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00014}00014 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_account_8h}{Account.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00015}00015 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_date_8h}{Date.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00018}\mbox{\hyperlink{class_savings___account}{00018}} \textcolor{keyword}{class }\mbox{\hyperlink{class_savings___account}{Savings\_Account}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_account}{Account}} \{}
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00020}00020 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00021}\mbox{\hyperlink{class_savings___account_a47beb9929d5e69ac09c2ebfcbc8356d0}{00021}}     \mbox{\hyperlink{class_savings___account_a47beb9929d5e69ac09c2ebfcbc8356d0}{Savings\_Account}}()\{\};}
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00023}\mbox{\hyperlink{class_savings___account_a91715a61344c2618bc98fa310360d896}{00023}}     \mbox{\hyperlink{class_savings___account_a91715a61344c2618bc98fa310360d896}{\string~Savings\_Account}}()\{\};}
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00025}00025     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_savings___account_aa918aaf16b446962d08e7c7f3bfa5fde}{deposit}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} amount, \textcolor{keyword}{const} \mbox{\hyperlink{class_date}{Date}} \&date);}
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00027}00027     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_savings___account_a055f1a30d2a512fea3f094eebc831939}{withdraw}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} amount, \textcolor{keyword}{const} \mbox{\hyperlink{class_date}{Date}} \&date);}
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00029}00029     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_savings___account_a5285399967873836cd3bc8c25ace0adf}{add\_interest}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_date}{Date}} \&date);}
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00031}00031 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00032}00032     \textcolor{keywordtype}{int} calculate\_number\_of\_annual\_terms\_from\_last\_transaction(}
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00033}00033                 \textcolor{keyword}{const} \mbox{\hyperlink{class_date}{Date}} \&date) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00035}00035     \textcolor{keywordtype}{int} calculate\_days\_from\_last\_transaction\_by\_annual\_terms(}
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00036}00036                 \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nr\_of\_annual\_terms) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00038}00038 \};}
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_savings___account_8h_source_l00040}00040 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SRC\_SAVINGS\_ACCOUNT\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

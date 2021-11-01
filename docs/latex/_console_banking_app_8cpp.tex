@@ -1,0 +1,99 @@
+\hypertarget{_console_banking_app_8cpp}{}\doxysection{src/app/\+Console\+Banking\+App.cpp File Reference}
+\label{_console_banking_app_8cpp}\index{src/app/ConsoleBankingApp.cpp@{src/app/ConsoleBankingApp.cpp}}
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include \char`\"{}Console\+Banking\+App.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Senior.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Adult.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Student.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Checking\+\_\+\+Account.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Savings\+\_\+\+Account.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Date.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Transaction.\+h\char`\"{}}\newline
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \mbox{\hyperlink{_console_banking_app_8cpp_aaf572f2599fc87136bec1e8de1112ad9}{BLANK\+\_\+\+CHARACTER}} = \textquotesingle{} \textquotesingle{}
+\item 
+const string \mbox{\hyperlink{_console_banking_app_8cpp_adcecb856ab04ce5ed4a28f7231619955}{ENTER\+\_\+\+ACCOUNT\+\_\+\+NUMBER}} = \char`\"{}Enter \mbox{\hyperlink{class_account}{Account}} Number$>$\char`\"{}
+\item 
+const string \mbox{\hyperlink{_console_banking_app_8cpp_ae544758b448e530ff2df5543656f8304}{ENTER\+\_\+\+AMOUNT}} = \char`\"{}Enter The Amount$>$\char`\"{}
+\item 
+const string \mbox{\hyperlink{_console_banking_app_8cpp_af43fbeec48024f72c7d23fe0699fa6b5}{ENTER\+\_\+\+DATE}} = \char`\"{}Enter the date yyyy-\/mm-\/dd$>$\char`\"{}
+\item 
+const long \mbox{\hyperlink{_console_banking_app_8cpp_aaa2ce9e532efb44af55781c8b0697f0a}{STREAM\+\_\+\+SIZE\+\_\+\+LIMIT}} = std\+::numeric\+\_\+limits$<$std\+::streamsize$>$\+::max()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Thuan Bach 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+October 24, 2021
+\end{DoxyDate}
+This module store information regarding accounts such as account number, balance, etc. There are 2 kinds of accounts\+: Checking and Savings. Functionalities regarding withdrawal, deposit and interest for each kind of accounts are different. And they will be implemented in derived classes instead of \mbox{\hyperlink{class_account}{Account}} class.
+
+\begin{DoxyAuthor}{Author}
+Thuan Bach 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+October 26, 2021
+\end{DoxyDate}
+The main module of the application where users will interact with through the Console. It is responsible for receiving users\textquotesingle{} input and invoke corresponding functionalities of \mbox{\hyperlink{class_bank}{Bank}} class such as adding an account, make deposit, make withdrawal, or query accounts. 
+
+Definition in file \mbox{\hyperlink{_console_banking_app_8cpp_source}{Console\+Banking\+App.\+cpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_console_banking_app_8cpp_aaf572f2599fc87136bec1e8de1112ad9}\label{_console_banking_app_8cpp_aaf572f2599fc87136bec1e8de1112ad9}} 
+\index{ConsoleBankingApp.cpp@{ConsoleBankingApp.cpp}!BLANK\_CHARACTER@{BLANK\_CHARACTER}}
+\index{BLANK\_CHARACTER@{BLANK\_CHARACTER}!ConsoleBankingApp.cpp@{ConsoleBankingApp.cpp}}
+\doxysubsubsection{\texorpdfstring{BLANK\_CHARACTER}{BLANK\_CHARACTER}}
+{\footnotesize\ttfamily const char BLANK\+\_\+\+CHARACTER = \textquotesingle{} \textquotesingle{}}
+
+
+
+Definition at line \mbox{\hyperlink{_console_banking_app_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{_console_banking_app_8cpp_source}{Console\+Banking\+App.\+cpp}}.
+
+\mbox{\Hypertarget{_console_banking_app_8cpp_adcecb856ab04ce5ed4a28f7231619955}\label{_console_banking_app_8cpp_adcecb856ab04ce5ed4a28f7231619955}} 
+\index{ConsoleBankingApp.cpp@{ConsoleBankingApp.cpp}!ENTER\_ACCOUNT\_NUMBER@{ENTER\_ACCOUNT\_NUMBER}}
+\index{ENTER\_ACCOUNT\_NUMBER@{ENTER\_ACCOUNT\_NUMBER}!ConsoleBankingApp.cpp@{ConsoleBankingApp.cpp}}
+\doxysubsubsection{\texorpdfstring{ENTER\_ACCOUNT\_NUMBER}{ENTER\_ACCOUNT\_NUMBER}}
+{\footnotesize\ttfamily const string ENTER\+\_\+\+ACCOUNT\+\_\+\+NUMBER = \char`\"{}Enter \mbox{\hyperlink{class_account}{Account}} Number$>$\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_console_banking_app_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{_console_banking_app_8cpp_source}{Console\+Banking\+App.\+cpp}}.
+
+\mbox{\Hypertarget{_console_banking_app_8cpp_ae544758b448e530ff2df5543656f8304}\label{_console_banking_app_8cpp_ae544758b448e530ff2df5543656f8304}} 
+\index{ConsoleBankingApp.cpp@{ConsoleBankingApp.cpp}!ENTER\_AMOUNT@{ENTER\_AMOUNT}}
+\index{ENTER\_AMOUNT@{ENTER\_AMOUNT}!ConsoleBankingApp.cpp@{ConsoleBankingApp.cpp}}
+\doxysubsubsection{\texorpdfstring{ENTER\_AMOUNT}{ENTER\_AMOUNT}}
+{\footnotesize\ttfamily const string ENTER\+\_\+\+AMOUNT = \char`\"{}Enter The Amount$>$\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_console_banking_app_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{_console_banking_app_8cpp_source}{Console\+Banking\+App.\+cpp}}.
+
+\mbox{\Hypertarget{_console_banking_app_8cpp_af43fbeec48024f72c7d23fe0699fa6b5}\label{_console_banking_app_8cpp_af43fbeec48024f72c7d23fe0699fa6b5}} 
+\index{ConsoleBankingApp.cpp@{ConsoleBankingApp.cpp}!ENTER\_DATE@{ENTER\_DATE}}
+\index{ENTER\_DATE@{ENTER\_DATE}!ConsoleBankingApp.cpp@{ConsoleBankingApp.cpp}}
+\doxysubsubsection{\texorpdfstring{ENTER\_DATE}{ENTER\_DATE}}
+{\footnotesize\ttfamily const string ENTER\+\_\+\+DATE = \char`\"{}Enter the date yyyy-\/mm-\/dd$>$\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_console_banking_app_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{_console_banking_app_8cpp_source}{Console\+Banking\+App.\+cpp}}.
+
+\mbox{\Hypertarget{_console_banking_app_8cpp_aaa2ce9e532efb44af55781c8b0697f0a}\label{_console_banking_app_8cpp_aaa2ce9e532efb44af55781c8b0697f0a}} 
+\index{ConsoleBankingApp.cpp@{ConsoleBankingApp.cpp}!STREAM\_SIZE\_LIMIT@{STREAM\_SIZE\_LIMIT}}
+\index{STREAM\_SIZE\_LIMIT@{STREAM\_SIZE\_LIMIT}!ConsoleBankingApp.cpp@{ConsoleBankingApp.cpp}}
+\doxysubsubsection{\texorpdfstring{STREAM\_SIZE\_LIMIT}{STREAM\_SIZE\_LIMIT}}
+{\footnotesize\ttfamily const long STREAM\+\_\+\+SIZE\+\_\+\+LIMIT = std\+::numeric\+\_\+limits$<$std\+::streamsize$>$\+::max()}
+
+
+
+Definition at line \mbox{\hyperlink{_console_banking_app_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{_console_banking_app_8cpp_source}{Console\+Banking\+App.\+cpp}}.
+

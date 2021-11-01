@@ -1,0 +1,70 @@
+\hypertarget{_customer_8h_source}{}\doxysection{Customer.\+h}
+\label{_customer_8h_source}\index{src/customer/Customer.h@{src/customer/Customer.h}}
+\mbox{\hyperlink{_customer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00012}00012 \textcolor{preprocessor}{\#ifndef SRC\_CUSTOMER\_H\_}}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00013}00013 \textcolor{preprocessor}{\#define SRC\_CUSTOMER\_H\_}}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00014}00014 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00016}00016 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00018}\mbox{\hyperlink{class_customer}{00018}} \textcolor{keyword}{class }\mbox{\hyperlink{class_customer}{Customer}} \{}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00020}00020 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00025}\mbox{\hyperlink{class_customer_abcc8fae9701e5ba9d7d6fe44498b34e3}{00025}}     \mbox{\hyperlink{class_customer_abcc8fae9701e5ba9d7d6fe44498b34e3}{Customer}}() :}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00026}00026             \mbox{\hyperlink{class_customer_a67b7caffb85b70db4ff679918ce6d68e}{customer\_number}}(-\/1), \mbox{\hyperlink{class_customer_a6e6fc6e4c2e23085849bb544aa68a77e}{name}}(\textcolor{stringliteral}{"{}"{}}), \mbox{\hyperlink{class_customer_a3a180b064d559c1623dcc4f6fd972c7e}{address}}(\textcolor{stringliteral}{"{}"{}}), \mbox{\hyperlink{class_customer_a286957f31f5dfc18dbf5acf3f3ec554a}{age}}(0), \mbox{\hyperlink{class_customer_a9eaf67ecbfa45ac3f9ab3ca69007ba46}{phone\_number}}(\textcolor{stringliteral}{"{}"{}}) \{}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00027}00027     \}}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00037}\mbox{\hyperlink{class_customer_a31a5340f21a907991659fb9f6152b241}{00037}}     \mbox{\hyperlink{class_customer_a31a5340f21a907991659fb9f6152b241}{Customer}}(\textcolor{keywordtype}{string} cus\_name, \textcolor{keywordtype}{string} cus\_address, \textcolor{keywordtype}{int} cus\_age,}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00038}00038             \textcolor{keywordtype}{string} cus\_phone\_number) :}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00039}00039             \mbox{\hyperlink{class_customer_a67b7caffb85b70db4ff679918ce6d68e}{customer\_number}}(-\/1), \mbox{\hyperlink{class_customer_a6e6fc6e4c2e23085849bb544aa68a77e}{name}}(cus\_name), \mbox{\hyperlink{class_customer_a3a180b064d559c1623dcc4f6fd972c7e}{address}}(cus\_address), \mbox{\hyperlink{class_customer_a286957f31f5dfc18dbf5acf3f3ec554a}{age}}(}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00040}00040                     cus\_age), \mbox{\hyperlink{class_customer_a9eaf67ecbfa45ac3f9ab3ca69007ba46}{phone\_number}}(cus\_phone\_number) \{}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00041}00041     \}}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00046}\mbox{\hyperlink{class_customer_a7784915654b180d09696edded3db913d}{00046}}     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_customer_a7784915654b180d09696edded3db913d}{\string~Customer}}() \{\}}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00053}00053     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_customer_a1a7d4df653fb4d9f182d08733c40a2ed}{get\_customer\_number}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00060}00060     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_customer_a0b8b787e38d329cff031c635c51becdf}{get\_age}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00067}00067     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_customer_ab85c533c0620935084d7354a164cf1b3}{get\_name}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00074}00074     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_customer_a1558516eab9ee0097d497958c4c19834}{get\_address}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00081}00081     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_customer_ae5669e0fcc515757da44381ed2003866}{get\_telephone\_number}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00089}00089     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_customer_af1e113fe449858b3d9283b146d519cc5}{set\_customer\_number}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{class_customer_a67b7caffb85b70db4ff679918ce6d68e}{customer\_number}});}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00097}00097     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_customer_a5f9ce3b7a5d2f8eaff489d7e981fa983}{set\_name}}(\textcolor{keywordtype}{string} \&\mbox{\hyperlink{class_customer_a6e6fc6e4c2e23085849bb544aa68a77e}{name}});}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00105}00105     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_customer_a337a6ed6192db6b8160582efba823c4e}{set\_address}}(\textcolor{keywordtype}{string} \&\mbox{\hyperlink{class_customer_a3a180b064d559c1623dcc4f6fd972c7e}{address}});}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00113}00113     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_customer_a39da9feb643f92e7f72e1cd90334331f}{set\_age}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{class_customer_a286957f31f5dfc18dbf5acf3f3ec554a}{age}});}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00122}00122     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_customer_a2cc3d9660767ecc57af57be45b7d9a5c}{set\_telephone\_number}}(\textcolor{keywordtype}{string} \&\mbox{\hyperlink{class_customer_a9eaf67ecbfa45ac3f9ab3ca69007ba46}{phone\_number}});}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00123}00123 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00129}\mbox{\hyperlink{class_customer_a968ed62a76a5838440b4e142d756ef8a}{00129}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_customer_a968ed62a76a5838440b4e142d756ef8a}{get\_type\_of\_customer}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00130}00130 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00136}\mbox{\hyperlink{class_customer_ac5136b36caef5d1284f889738888897b}{00136}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_customer_ac5136b36caef5d1284f889738888897b}{get\_savings\_interest}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00143}\mbox{\hyperlink{class_customer_aa25791df3470963ad65bac45e0ba618e}{00143}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_customer_aa25791df3470963ad65bac45e0ba618e}{get\_checking\_interest}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00150}\mbox{\hyperlink{class_customer_a124266f1ebddc2ff004cb32c179decef}{00150}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_customer_a124266f1ebddc2ff004cb32c179decef}{get\_checking\_charge}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00151}00151 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00157}\mbox{\hyperlink{class_customer_ae7eef9c921c7034ca9d4d7badeb31eb3}{00157}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_customer_ae7eef9c921c7034ca9d4d7badeb31eb3}{get\_overdraft\_penalty}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00158}00158 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00159}00159 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00160}\mbox{\hyperlink{class_customer_a67b7caffb85b70db4ff679918ce6d68e}{00160}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_customer_a67b7caffb85b70db4ff679918ce6d68e}{customer\_number}};}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00161}\mbox{\hyperlink{class_customer_a6e6fc6e4c2e23085849bb544aa68a77e}{00161}}     std::string \mbox{\hyperlink{class_customer_a6e6fc6e4c2e23085849bb544aa68a77e}{name}};}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00162}\mbox{\hyperlink{class_customer_a3a180b064d559c1623dcc4f6fd972c7e}{00162}}     std::string \mbox{\hyperlink{class_customer_a3a180b064d559c1623dcc4f6fd972c7e}{address}};}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00163}\mbox{\hyperlink{class_customer_a286957f31f5dfc18dbf5acf3f3ec554a}{00163}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_customer_a286957f31f5dfc18dbf5acf3f3ec554a}{age}};}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00164}\mbox{\hyperlink{class_customer_a9eaf67ecbfa45ac3f9ab3ca69007ba46}{00164}}     std::string \mbox{\hyperlink{class_customer_a9eaf67ecbfa45ac3f9ab3ca69007ba46}{phone\_number}};}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00165}00165 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00166}00166 \};}
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{_customer_8h_source_l00168}00168 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SRC\_CUSTOMER\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
