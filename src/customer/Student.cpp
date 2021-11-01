@@ -17,19 +17,39 @@ string Student::get_type_of_customer() const{
 	return "Student";
 }
 
+/**
+ * Get savings interest
+ *
+ * @return	float The savings interest of Student customers.
+ */
 float Student::get_savings_interest() const {
 	return SAVINGS_INTEREST;
 }
 
+/**
+ * Get savings interest
+ *
+ * @return	float The checking interest of Student customers.
+ */
  float Student::get_checking_interest() const {
  	return CHECK_INTEREST;
  }
 
+ /**
+ * Get savings interest
+ *
+ * @return	float The checking charge of Student customers.
+ */
  float Student::get_checking_charge() const {
 	 return CHECK_CHARGE;
  }
 
- float Student::get_overdraft_penality() const {
+/**
+ * Get savings interest
+ *
+ * @return	float The checking charge of Student customers.
+ */
+ float Student::get_overdraft_penalty() const {
  	return OVERDRAFT_PENALTY;
  }
 

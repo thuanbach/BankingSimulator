@@ -63,7 +63,7 @@ void Savings_Account::withdraw(const double amount, const Date &date) {
 	process_transaction(WITHDRAW, amount, date);
 
 	if (overdraft) {
-		process_transaction(OVERDRAFT, get_customer()->get_overdraft_penality(), date);
+		process_transaction(OVERDRAFT, get_customer()->get_overdraft_penalty(), date);
 	}
 }
 

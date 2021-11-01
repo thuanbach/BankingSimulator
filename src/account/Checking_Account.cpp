@@ -48,7 +48,7 @@ void Checking_Account::withdraw(const double amount, const Date &date) {
 	}
 
 	if (overdraft) {
-		process_transaction(OVERDRAFT, get_customer()->get_overdraft_penality(),
+		process_transaction(OVERDRAFT, get_customer()->get_overdraft_penalty(),
 				date);
 	}
 

@@ -14,10 +14,6 @@
 
 using namespace std;
 
-string Customer::get_type_of_customer() const{
-	return "Customer";
-}
-
 string Customer::get_name() const {
 	return name;
 }

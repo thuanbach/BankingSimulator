@@ -2,9 +2,9 @@
  *
  * @file Transaction.cpp
  * @author Thuan Bach
- * @date October 23, 2021
+ * @date October 20, 2021
  *
- * The class holds information of a transaction executed such as transaction's date , the type of the transaction, the amount, and the balance after the transaction
+ * This holds information of a transaction such as transaction's date , the type of the transaction, the amount, and the balance after the transaction
  *
  */
 #include <iostream>
@@ -17,13 +17,20 @@
 
 using namespace std;
 
+
+/**
+ * Returns a string object represents a transaction
+ *
+ * @return A string object represents a transaction
+ */
 string Transaction::to_string() const {
 	const string SPACE_CHARACTER = " ";
 	const string TAB_CHARACTER = "	";
 
 	ostringstream result;
 
-	result << right << setw(10) ;
+	result << right << setw(10);
+
 	switch (transaction_type) {
 		case WITHDRAW:
 			result << "WD";
@@ -53,12 +60,20 @@ string Transaction::to_string() const {
 	return result.str();
 }
 
+/**
+ * Returns the balance that is hold by transaction
+ *
+ * @return string The account balance at the end of the transaction
+ */
 double Transaction::get_balance() const {
 	return balance;
 }
 
+/**
+ * Returns the transaction date
+ *
+ * @return date The transaction date
+ */
 Date Transaction::get_transaction_date() const {
 	return date;
 }
-
-

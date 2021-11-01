@@ -11,24 +11,48 @@
 
 #include "Adult.h"
 
-
+/**
+ * Returns a string represents a Adult customer type
+ *
+ * @return	string Returns a string represents a Adult customer type.
+ */
 string Adult::get_type_of_customer() const{
 	return "Adult";
 }
 
+/**
+ * Get savings interest
+ *
+ * @return	float The savings interest of Adult customers.
+ */
 float Adult::get_savings_interest() const {
 	return SAVINGS_INTEREST;
 }
 
+/**
+ * Get savings interest
+ *
+ * @return	float The checking interest of Adult customers.
+ */
  float Adult::get_checking_interest() const {
  	return CHECK_INTEREST;
  }
 
+ /**
+ * Get savings interest
+ *
+ * @return	float The checking charge of Adult customers.
+ */
  float Adult::get_checking_charge() const {
 	 return CHECK_CHARGE;
  }
 
- float Adult::get_overdraft_penality() const {
+ /**
+ * Get savings interest
+ *
+ * @return	float The checking charge of Adult customers.
+ */
+ float Adult::get_overdraft_penalty() const {
  	return OVERDRAFT_PENALTY;
  }
 

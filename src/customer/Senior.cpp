@@ -10,22 +10,47 @@
  */
 #include "Senior.h"
 
+/**
+ * Returns a string represents a Senior customer type
+ *
+ * @return	string Returns a string represents a Senior customer type.
+ */
 string Senior::get_type_of_customer() const{
 	return "Senior";
 }
 
+/**
+ * Get savings interest
+ *
+ * @return	float The savings interest of Senior customers.
+ */
 float Senior::get_savings_interest() const {
 	return SAVINGS_INTEREST;
 }
 
+/**
+ * Get savings interest
+ *
+ * @return	float The checking interest of Senior customers.
+ */
  float Senior::get_checking_interest() const {
  	return CHECK_INTEREST;
  }
 
+ /**
+ * Get savings interest
+ *
+ * @return	float The checking charge of Senior customers.
+ */
  float Senior::get_checking_charge() const {
 	 return CHECK_CHARGE;
  }
 
- float Senior::get_overdraft_penality() const {
+ /**
+ * Get savings interest
+ *
+ * @return	float The checking charge of Senior customers.
+ */
+ float Senior::get_overdraft_penalty() const {
  	return OVERDRAFT_PENALTY;
  }
